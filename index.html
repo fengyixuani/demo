@@ -63,6 +63,23 @@
   figure.goods .stack{display:grid; gap:4px; background:#000}
   figure.goods img{display:block; width:100%; aspect-ratio:9/16; object-fit:contain; background:#000}
   figure.goods .stack.two img{aspect-ratio:9/8}
+  .play{
+    display:block; width:100%; padding:0; border:0; line-height:0;
+    background:#000; cursor:pointer; position:relative;
+  }
+  .play img{display:block; width:100%; aspect-ratio:9/16; object-fit:contain; background:#000}
+  .play::after{
+    content:""; position:absolute; left:50%; top:50%; width:52px; height:52px;
+    transform:translate(-50%,-50%); border-radius:50%;
+    background:rgba(0,0,0,.5); border:1px solid rgba(255,255,255,.45);
+  }
+  .play::before{
+    content:""; position:absolute; left:50%; top:50%; z-index:1;
+    transform:translate(-35%,-50%);
+    border-left:15px solid #fff; border-top:9px solid transparent; border-bottom:9px solid transparent;
+  }
+  .play:hover::after{background:rgba(0,0,0,.72)}
+  .play:focus-visible{outline:2px solid var(--accent); outline-offset:3px}
 </style>
 </head>
 <body>
@@ -130,14 +147,18 @@
     <p class="rowtitle"><b>羽衣甘蓝</b><em>反向营销 → 成分说明 → 冲兑展示 → 结尾促单</em></p>
     <div class="vids">
       <figure>
-        <video src="media/ref/%E7%BE%BD%E8%A1%A3%E7%94%98%E8%93%9D.mp4" poster="media/posters/ref/%E7%BE%BD%E8%A1%A3%E7%94%98%E8%93%9D.jpg" controls muted loop playsinline preload="none"></video>
+        <button class="play" type="button" data-src="media/ref/%E7%BE%BD%E8%A1%A3%E7%94%98%E8%93%9D.mp4" aria-label="播放该片段">
+          <img src="media/posters/ref/%E7%BE%BD%E8%A1%A3%E7%94%98%E8%93%9D.jpg" alt="" loading="lazy" decoding="async">
+        </button>
         <figcaption>
           <b>参考原片</b>
           <span>被复刻的原始成片</span>
         </figcaption>
       </figure>
       <figure>
-        <video src="media/%E9%BB%91%E5%B7%A7%E5%92%96%E5%95%A1%2Bbgm.mov" poster="media/posters/%E9%BB%91%E5%B7%A7%E5%92%96%E5%95%A1%2Bbgm.jpg" controls muted loop playsinline preload="none"></video>
+        <button class="play" type="button" data-src="media/%E9%BB%91%E5%B7%A7%E5%92%96%E5%95%A1%2Bbgm.mov" aria-label="播放该片段">
+          <img src="media/posters/%E9%BB%91%E5%B7%A7%E5%92%96%E5%95%A1%2Bbgm.jpg" alt="" loading="lazy" decoding="async">
+        </button>
         <figcaption>
           <b>复刻成片</b>
           <span>生成结果</span>
@@ -183,14 +204,18 @@
     <p class="rowtitle"><b>黑咖啡参考1</b><em>食用展示 → 信任背书 → 成分介绍 → 结尾促销</em></p>
     <div class="vids">
       <figure>
-        <video src="media/ref/%E9%BB%91%E5%92%96%E5%95%A1%E5%8F%82%E8%80%831.mp4" poster="media/posters/ref/%E9%BB%91%E5%92%96%E5%95%A1%E5%8F%82%E8%80%831.jpg" controls muted loop playsinline preload="none"></video>
+        <button class="play" type="button" data-src="media/ref/%E9%BB%91%E5%92%96%E5%95%A1%E5%8F%82%E8%80%831.mp4" aria-label="播放该片段">
+          <img src="media/posters/ref/%E9%BB%91%E5%92%96%E5%95%A1%E5%8F%82%E8%80%831.jpg" alt="" loading="lazy" decoding="async">
+        </button>
         <figcaption>
           <b>参考原片</b>
           <span>被复刻的原始成片</span>
         </figcaption>
       </figure>
       <figure>
-        <video src="media/%E9%BB%91%E5%B7%A7%E5%8D%A1.mov" poster="media/posters/%E9%BB%91%E5%B7%A7%E5%8D%A1.jpg" controls muted loop playsinline preload="none"></video>
+        <button class="play" type="button" data-src="media/%E9%BB%91%E5%B7%A7%E5%8D%A1.mov" aria-label="播放该片段">
+          <img src="media/posters/%E9%BB%91%E5%B7%A7%E5%8D%A1.jpg" alt="" loading="lazy" decoding="async">
+        </button>
         <figcaption>
           <b>复刻成片</b>
           <span>生成结果</span>
@@ -236,14 +261,18 @@
     <p class="rowtitle"><b>理然泥膜棒</b><em>焦虑制造 → 商品使用 → 原理介绍 → 结尾促单</em></p>
     <div class="vids">
       <figure>
-        <video src="media/ref/%E7%90%86%E7%84%B6%E6%B3%A5%E8%86%9C%E6%A3%92.mov" poster="media/posters/ref/%E7%90%86%E7%84%B6%E6%B3%A5%E8%86%9C%E6%A3%92.jpg" controls muted loop playsinline preload="none"></video>
+        <button class="play" type="button" data-src="media/ref/%E7%90%86%E7%84%B6%E6%B3%A5%E8%86%9C%E6%A3%92.mov" aria-label="播放该片段">
+          <img src="media/posters/ref/%E7%90%86%E7%84%B6%E6%B3%A5%E8%86%9C%E6%A3%92.jpg" alt="" loading="lazy" decoding="async">
+        </button>
         <figcaption>
           <b>参考原片</b>
           <span>被复刻的原始成片</span>
         </figcaption>
       </figure>
       <figure>
-        <video src="media/%E7%BE%8E%E5%A6%86.mov" poster="media/posters/%E7%BE%8E%E5%A6%86.jpg" controls muted loop playsinline preload="none"></video>
+        <button class="play" type="button" data-src="media/%E7%BE%8E%E5%A6%86.mov" aria-label="播放该片段">
+          <img src="media/posters/%E7%BE%8E%E5%A6%86.jpg" alt="" loading="lazy" decoding="async">
+        </button>
         <figcaption>
           <b>复刻成片</b>
           <span>生成结果</span>
@@ -289,14 +318,18 @@
     <p class="rowtitle"><b>博士耳塞</b><em>夸张体验 → 设计介绍 → 使用场景 → 痛点营销</em></p>
     <div class="vids">
       <figure>
-        <video src="media/ref/%E5%8D%9A%E5%A3%AB%E8%80%B3%E5%A1%9E.MP4" poster="media/posters/ref/%E5%8D%9A%E5%A3%AB%E8%80%B3%E5%A1%9E.jpg" controls muted loop playsinline preload="none"></video>
+        <button class="play" type="button" data-src="media/ref/%E5%8D%9A%E5%A3%AB%E8%80%B3%E5%A1%9E.MP4" aria-label="播放该片段">
+          <img src="media/posters/ref/%E5%8D%9A%E5%A3%AB%E8%80%B3%E5%A1%9E.jpg" alt="" loading="lazy" decoding="async">
+        </button>
         <figcaption>
           <b>参考原片</b>
           <span>被复刻的原始成片</span>
         </figcaption>
       </figure>
       <figure>
-        <video src="media/%E8%80%B3%E5%A1%9E%E6%97%A0%E9%87%8D%E7%82%B9.mov" poster="media/posters/%E8%80%B3%E5%A1%9E%E6%97%A0%E9%87%8D%E7%82%B9.jpg" controls muted loop playsinline preload="none"></video>
+        <button class="play" type="button" data-src="media/%E8%80%B3%E5%A1%9E%E6%97%A0%E9%87%8D%E7%82%B9.mov" aria-label="播放该片段">
+          <img src="media/posters/%E8%80%B3%E5%A1%9E%E6%97%A0%E9%87%8D%E7%82%B9.jpg" alt="" loading="lazy" decoding="async">
+        </button>
         <figcaption>
           <b>复刻成片</b>
           <span>生成结果</span>
@@ -342,14 +375,18 @@
     <p class="rowtitle"><b>干发</b><em>痛点营销 → 操作展示 → 操作展示</em></p>
     <div class="vids">
       <figure>
-        <video src="media/ref/%E5%B9%B2%E5%8F%91.mp4" poster="media/posters/ref/%E5%B9%B2%E5%8F%91.jpg" controls muted loop playsinline preload="none"></video>
+        <button class="play" type="button" data-src="media/ref/%E5%B9%B2%E5%8F%91.mp4" aria-label="播放该片段">
+          <img src="media/posters/ref/%E5%B9%B2%E5%8F%91.jpg" alt="" loading="lazy" decoding="async">
+        </button>
         <figcaption>
           <b>参考原片</b>
           <span>被复刻的原始成片</span>
         </figcaption>
       </figure>
       <figure>
-        <video src="media/%E6%B3%A1%E6%B2%AB.mov" poster="media/posters/%E6%B3%A1%E6%B2%AB.jpg" controls muted loop playsinline preload="none"></video>
+        <button class="play" type="button" data-src="media/%E6%B3%A1%E6%B2%AB.mov" aria-label="播放该片段">
+          <img src="media/posters/%E6%B3%A1%E6%B2%AB.jpg" alt="" loading="lazy" decoding="async">
+        </button>
         <figcaption>
           <b>复刻成片</b>
           <span>生成结果</span>
@@ -395,14 +432,18 @@
     <p class="rowtitle"><b>美津浓爆款复古跑鞋</b></p>
     <div class="vids">
       <figure>
-        <video src="media/ref/%E7%BE%8E%E6%B4%A5%E6%B5%93%E7%88%86%E6%AC%BE%E5%A4%8D%E5%8F%A4%E8%B7%91%E9%9E%8B.mp4" poster="media/posters/ref/%E7%BE%8E%E6%B4%A5%E6%B5%93%E7%88%86%E6%AC%BE%E5%A4%8D%E5%8F%A4%E8%B7%91%E9%9E%8B.jpg" controls muted loop playsinline preload="none"></video>
+        <button class="play" type="button" data-src="media/ref/%E7%BE%8E%E6%B4%A5%E6%B5%93%E7%88%86%E6%AC%BE%E5%A4%8D%E5%8F%A4%E8%B7%91%E9%9E%8B.mp4" aria-label="播放该片段">
+          <img src="media/posters/ref/%E7%BE%8E%E6%B4%A5%E6%B5%93%E7%88%86%E6%AC%BE%E5%A4%8D%E5%8F%A4%E8%B7%91%E9%9E%8B.jpg" alt="" loading="lazy" decoding="async">
+        </button>
         <figcaption>
           <b>参考原片</b>
           <span>被复刻的原始成片</span>
         </figcaption>
       </figure>
       <figure>
-        <video src="media/%E9%9E%8B%E5%AD%90%E9%9D%9Eaigc.mp4" poster="media/posters/%E9%9E%8B%E5%AD%90%E9%9D%9Eaigc.jpg" controls muted loop playsinline preload="none"></video>
+        <button class="play" type="button" data-src="media/%E9%9E%8B%E5%AD%90%E9%9D%9Eaigc.mp4" aria-label="播放该片段">
+          <img src="media/posters/%E9%9E%8B%E5%AD%90%E9%9D%9Eaigc.jpg" alt="" loading="lazy" decoding="async">
+        </button>
         <figcaption>
           <b>复刻成片</b>
           <span>非 AIGC，实拍对照</span>
@@ -414,21 +455,27 @@
     <p class="rowtitle"><b>饺子包</b><em>手持展示 → 容积展示 → 放置展示 → 商品交互</em></p>
     <div class="vids">
       <figure>
-        <video src="media/ref/%E9%A5%BA%E5%AD%90%E5%8C%85.mp4" poster="media/posters/ref/%E9%A5%BA%E5%AD%90%E5%8C%85.jpg" controls muted loop playsinline preload="none"></video>
+        <button class="play" type="button" data-src="media/ref/%E9%A5%BA%E5%AD%90%E5%8C%85.mp4" aria-label="播放该片段">
+          <img src="media/posters/ref/%E9%A5%BA%E5%AD%90%E5%8C%85.jpg" alt="" loading="lazy" decoding="async">
+        </button>
         <figcaption>
           <b>参考原片</b>
           <span>被复刻的原始成片</span>
         </figcaption>
       </figure>
       <figure>
-        <video src="media/%E5%8C%85%E5%8C%85.mp4" poster="media/posters/%E5%8C%85%E5%8C%85.jpg" controls muted loop playsinline preload="none"></video>
+        <button class="play" type="button" data-src="media/%E5%8C%85%E5%8C%85.mp4" aria-label="播放该片段">
+          <img src="media/posters/%E5%8C%85%E5%8C%85.jpg" alt="" loading="lazy" decoding="async">
+        </button>
         <figcaption>
           <b>复刻 第 1 版</b>
           <span>生成结果</span>
         </figcaption>
       </figure>
       <figure>
-        <video src="media/agentcut_20260731_112313_loop1.mp4" poster="media/posters/agentcut_20260731_112313_loop1.jpg" controls muted loop playsinline preload="none"></video>
+        <button class="play" type="button" data-src="media/agentcut_20260731_112313_loop1.mp4" aria-label="播放该片段">
+          <img src="media/posters/agentcut_20260731_112313_loop1.jpg" alt="" loading="lazy" decoding="async">
+        </button>
         <figcaption>
           <b>复刻 第 2 版</b>
           <span>生成结果</span>
@@ -474,21 +521,27 @@
     <p class="rowtitle"><b>xianglian</b><em>佩戴展示 → 细节展示 → 佩戴展示</em></p>
     <div class="vids">
       <figure>
-        <video src="media/ref/xianglian.mp4" poster="media/posters/ref/xianglian.jpg" controls muted loop playsinline preload="none"></video>
+        <button class="play" type="button" data-src="media/ref/xianglian.mp4" aria-label="播放该片段">
+          <img src="media/posters/ref/xianglian.jpg" alt="" loading="lazy" decoding="async">
+        </button>
         <figcaption>
           <b>参考原片</b>
           <span>被复刻的原始成片</span>
         </figcaption>
       </figure>
       <figure>
-        <video src="media/agentcut_20260731_175216_loop1.mp4" poster="media/posters/agentcut_20260731_175216_loop1.jpg" controls muted loop playsinline preload="none"></video>
+        <button class="play" type="button" data-src="media/agentcut_20260731_175216_loop1.mp4" aria-label="播放该片段">
+          <img src="media/posters/agentcut_20260731_175216_loop1.jpg" alt="" loading="lazy" decoding="async">
+        </button>
         <figcaption>
           <b>复刻 第 1 版</b>
           <span>生成结果</span>
         </figcaption>
       </figure>
       <figure>
-        <video src="media/agentcut_20260803_183322_loop1_%E5%89%AF%E6%9C%AC2.mp4" poster="media/posters/agentcut_20260803_183322_loop1_%E5%89%AF%E6%9C%AC2.jpg" controls muted loop playsinline preload="none"></video>
+        <button class="play" type="button" data-src="media/agentcut_20260803_183322_loop1_%E5%89%AF%E6%9C%AC2.mp4" aria-label="播放该片段">
+          <img src="media/posters/agentcut_20260803_183322_loop1_%E5%89%AF%E6%9C%AC2.jpg" alt="" loading="lazy" decoding="async">
+        </button>
         <figcaption>
           <b>复刻 第 2 版</b>
           <span>生成结果</span>
@@ -527,21 +580,27 @@
     <p class="rowtitle"><b>牛肉饼_Ref</b><em>切面展示 → 制作过程 → 食欲营销 → 食材展示 → 食材展示 → 食材展示</em></p>
     <div class="vids">
       <figure>
-        <video src="media/ref/%E7%89%9B%E8%82%89%E9%A5%BC_Ref.mov" poster="media/posters/ref/%E7%89%9B%E8%82%89%E9%A5%BC_Ref.jpg" controls muted loop playsinline preload="none"></video>
+        <button class="play" type="button" data-src="media/ref/%E7%89%9B%E8%82%89%E9%A5%BC_Ref.mov" aria-label="播放该片段">
+          <img src="media/posters/ref/%E7%89%9B%E8%82%89%E9%A5%BC_Ref.jpg" alt="" loading="lazy" decoding="async">
+        </button>
         <figcaption>
           <b>参考原片</b>
           <span>被复刻的原始成片</span>
         </figcaption>
       </figure>
       <figure>
-        <video src="media/%E4%BF%AE%E6%94%B9%E5%90%8E.mp4" poster="media/posters/%E4%BF%AE%E6%94%B9%E5%90%8E.jpg" controls muted loop playsinline preload="none"></video>
+        <button class="play" type="button" data-src="media/%E4%BF%AE%E6%94%B9%E5%90%8E.mp4" aria-label="播放该片段">
+          <img src="media/posters/%E4%BF%AE%E6%94%B9%E5%90%8E.jpg" alt="" loading="lazy" decoding="async">
+        </button>
         <figcaption>
           <b>复刻 第 1 版</b>
           <span>生成结果</span>
         </figcaption>
       </figure>
       <figure>
-        <video src="media/agentcut_20260731_175830_loop1.mp4" poster="media/posters/agentcut_20260731_175830_loop1.jpg" controls muted loop playsinline preload="none"></video>
+        <button class="play" type="button" data-src="media/agentcut_20260731_175830_loop1.mp4" aria-label="播放该片段">
+          <img src="media/posters/agentcut_20260731_175830_loop1.jpg" alt="" loading="lazy" decoding="async">
+        </button>
         <figcaption>
           <b>复刻 第 2 版</b>
           <span>生成结果</span>
@@ -587,14 +646,18 @@
     <p class="rowtitle"><b>眼睛</b><em>佩戴动作 → 近景展示 → 半身展示</em></p>
     <div class="vids">
       <figure>
-        <video src="media/ref/%E7%9C%BC%E7%9D%9B.mp4" poster="media/posters/ref/%E7%9C%BC%E7%9D%9B.jpg" controls muted loop playsinline preload="none"></video>
+        <button class="play" type="button" data-src="media/ref/%E7%9C%BC%E7%9D%9B.mp4" aria-label="播放该片段">
+          <img src="media/posters/ref/%E7%9C%BC%E7%9D%9B.jpg" alt="" loading="lazy" decoding="async">
+        </button>
         <figcaption>
           <b>参考原片</b>
           <span>被复刻的原始成片</span>
         </figcaption>
       </figure>
       <figure>
-        <video src="media/agentcut_20260731_182532_loop1.mp4" poster="media/posters/agentcut_20260731_182532_loop1.jpg" controls muted loop playsinline preload="none"></video>
+        <button class="play" type="button" data-src="media/agentcut_20260731_182532_loop1.mp4" aria-label="播放该片段">
+          <img src="media/posters/agentcut_20260731_182532_loop1.jpg" alt="" loading="lazy" decoding="async">
+        </button>
         <figcaption>
           <b>复刻成片</b>
           <span>生成结果</span>
@@ -650,14 +713,18 @@
         </figcaption>
       </figure>
       <figure>
-        <video src="media/drama/15s_1.mov" poster="media/posters/drama/15s_1.jpg" controls muted loop playsinline preload="none"></video>
+        <button class="play" type="button" data-src="media/drama/15s_1.mov" aria-label="播放该片段">
+          <img src="media/posters/drama/15s_1.jpg" alt="" loading="lazy" decoding="async">
+        </button>
         <figcaption>
           <b>参考原片</b>
           <span>被复刻的原始成片</span>
         </figcaption>
       </figure>
       <figure>
-        <video src="media/drama/%E9%A5%AE%E6%96%99.mov" poster="media/posters/drama/%E9%A5%AE%E6%96%99.jpg" controls muted loop playsinline preload="none"></video>
+        <button class="play" type="button" data-src="media/drama/%E9%A5%AE%E6%96%99.mov" aria-label="播放该片段">
+          <img src="media/posters/drama/%E9%A5%AE%E6%96%99.jpg" alt="" loading="lazy" decoding="async">
+        </button>
         <figcaption>
           <b>复刻成片</b>
           <span>生成结果</span>
@@ -713,14 +780,18 @@
         </figcaption>
       </figure>
       <figure>
-        <video src="media/drama/%E9%93%81%E9%94%85.mp4" poster="media/posters/drama/%E9%93%81%E9%94%85.jpg" controls muted loop playsinline preload="none"></video>
+        <button class="play" type="button" data-src="media/drama/%E9%93%81%E9%94%85.mp4" aria-label="播放该片段">
+          <img src="media/posters/drama/%E9%93%81%E9%94%85.jpg" alt="" loading="lazy" decoding="async">
+        </button>
         <figcaption>
           <b>参考原片</b>
           <span>被复刻的原始成片</span>
         </figcaption>
       </figure>
       <figure>
-        <video src="media/drama/result_vlm_gemini_reconstruct.mp4" poster="media/posters/drama/result_vlm_gemini_reconstruct.jpg" controls muted loop playsinline preload="none"></video>
+        <button class="play" type="button" data-src="media/drama/result_vlm_gemini_reconstruct.mp4" aria-label="播放该片段">
+          <img src="media/posters/drama/result_vlm_gemini_reconstruct.jpg" alt="" loading="lazy" decoding="async">
+        </button>
         <figcaption>
           <b>复刻成片</b>
           <span>生成结果</span>
@@ -767,14 +838,18 @@
         </figcaption>
       </figure>
       <figure>
-        <video src="media/drama/%E5%AE%B6%E5%BA%AD%E7%BA%B7%E4%BA%89-%E8%B1%86%E6%B5%86.MP4" poster="media/posters/drama/%E5%AE%B6%E5%BA%AD%E7%BA%B7%E4%BA%89-%E8%B1%86%E6%B5%86.jpg" controls muted loop playsinline preload="none"></video>
+        <button class="play" type="button" data-src="media/drama/%E5%AE%B6%E5%BA%AD%E7%BA%B7%E4%BA%89-%E8%B1%86%E6%B5%86.MP4" aria-label="播放该片段">
+          <img src="media/posters/drama/%E5%AE%B6%E5%BA%AD%E7%BA%B7%E4%BA%89-%E8%B1%86%E6%B5%86.jpg" alt="" loading="lazy" decoding="async">
+        </button>
         <figcaption>
           <b>参考原片</b>
           <span>被复刻的原始成片</span>
         </figcaption>
       </figure>
       <figure>
-        <video src="media/drama/fina32.mp4" poster="media/posters/drama/fina32.jpg" controls muted loop playsinline preload="none"></video>
+        <button class="play" type="button" data-src="media/drama/fina32.mp4" aria-label="播放该片段">
+          <img src="media/posters/drama/fina32.jpg" alt="" loading="lazy" decoding="async">
+        </button>
         <figcaption>
           <b>复刻成片</b>
           <span>生成结果</span>
@@ -821,14 +896,18 @@
         </figcaption>
       </figure>
       <figure>
-        <video src="media/drama/%E7%9A%87%E5%AE%AB-%E7%89%9B%E8%82%8B%E6%9D%A1.MP4" poster="media/posters/drama/%E7%9A%87%E5%AE%AB-%E7%89%9B%E8%82%8B%E6%9D%A1.jpg" controls muted loop playsinline preload="none"></video>
+        <button class="play" type="button" data-src="media/drama/%E7%9A%87%E5%AE%AB-%E7%89%9B%E8%82%8B%E6%9D%A1.MP4" aria-label="播放该片段">
+          <img src="media/posters/drama/%E7%9A%87%E5%AE%AB-%E7%89%9B%E8%82%8B%E6%9D%A1.jpg" alt="" loading="lazy" decoding="async">
+        </button>
         <figcaption>
           <b>参考原片</b>
           <span>被复刻的原始成片</span>
         </figcaption>
       </figure>
       <figure>
-        <video src="media/drama/final.mp4" poster="media/posters/drama/final.jpg" controls muted loop playsinline preload="none"></video>
+        <button class="play" type="button" data-src="media/drama/final.mp4" aria-label="播放该片段">
+          <img src="media/posters/drama/final.jpg" alt="" loading="lazy" decoding="async">
+        </button>
         <figcaption>
           <b>复刻成片</b>
           <span>生成结果</span>
@@ -875,14 +954,18 @@
         </figcaption>
       </figure>
       <figure>
-        <video src="media/drama/%E7%A9%BF%E8%B6%8A-%E7%89%99%E8%86%8F.MP4" poster="media/posters/drama/%E7%A9%BF%E8%B6%8A-%E7%89%99%E8%86%8F.jpg" controls muted loop playsinline preload="none"></video>
+        <button class="play" type="button" data-src="media/drama/%E7%A9%BF%E8%B6%8A-%E7%89%99%E8%86%8F.MP4" aria-label="播放该片段">
+          <img src="media/posters/drama/%E7%A9%BF%E8%B6%8A-%E7%89%99%E8%86%8F.jpg" alt="" loading="lazy" decoding="async">
+        </button>
         <figcaption>
           <b>参考原片</b>
           <span>被复刻的原始成片</span>
         </figcaption>
       </figure>
       <figure>
-        <video src="media/drama/final.mp4" poster="media/posters/drama/final.jpg" controls muted loop playsinline preload="none"></video>
+        <button class="play" type="button" data-src="media/drama/final.mp4" aria-label="播放该片段">
+          <img src="media/posters/drama/final.jpg" alt="" loading="lazy" decoding="async">
+        </button>
         <figcaption>
           <b>复刻成片</b>
           <span>生成结果</span>
@@ -929,14 +1012,18 @@
         </figcaption>
       </figure>
       <figure>
-        <video src="media/drama/%E7%9B%B8%E6%9C%BA.MP4" poster="media/posters/drama/%E7%9B%B8%E6%9C%BA.jpg" controls muted loop playsinline preload="none"></video>
+        <button class="play" type="button" data-src="media/drama/%E7%9B%B8%E6%9C%BA.MP4" aria-label="播放该片段">
+          <img src="media/posters/drama/%E7%9B%B8%E6%9C%BA.jpg" alt="" loading="lazy" decoding="async">
+        </button>
         <figcaption>
           <b>参考原片</b>
           <span>被复刻的原始成片</span>
         </figcaption>
       </figure>
       <figure>
-        <video src="media/drama/final.mp4" poster="media/posters/drama/final.jpg" controls muted loop playsinline preload="none"></video>
+        <button class="play" type="button" data-src="media/drama/final.mp4" aria-label="播放该片段">
+          <img src="media/posters/drama/final.jpg" alt="" loading="lazy" decoding="async">
+        </button>
         <figcaption>
           <b>复刻成片</b>
           <span>生成结果</span>
@@ -957,14 +1044,18 @@
         </figcaption>
       </figure>
       <figure>
-        <video src="media/drama/%E5%86%9B%E8%90%A5-%E9%B8%A1%E6%B1%A4.MP4" poster="media/posters/drama/%E5%86%9B%E8%90%A5-%E9%B8%A1%E6%B1%A4.jpg" controls muted loop playsinline preload="none"></video>
+        <button class="play" type="button" data-src="media/drama/%E5%86%9B%E8%90%A5-%E9%B8%A1%E6%B1%A4.MP4" aria-label="播放该片段">
+          <img src="media/posters/drama/%E5%86%9B%E8%90%A5-%E9%B8%A1%E6%B1%A4.jpg" alt="" loading="lazy" decoding="async">
+        </button>
         <figcaption>
           <b>参考原片</b>
           <span>被复刻的原始成片</span>
         </figcaption>
       </figure>
       <figure>
-        <video src="media/drama/final.mp4" poster="media/posters/drama/final.jpg" controls muted loop playsinline preload="none"></video>
+        <button class="play" type="button" data-src="media/drama/final.mp4" aria-label="播放该片段">
+          <img src="media/posters/drama/final.jpg" alt="" loading="lazy" decoding="async">
+        </button>
         <figcaption>
           <b>复刻成片</b>
           <span>生成结果</span>
@@ -985,14 +1076,18 @@
         </figcaption>
       </figure>
       <figure>
-        <video src="media/drama/15s_1.mov" poster="media/posters/drama/15s_1.jpg" controls muted loop playsinline preload="none"></video>
+        <button class="play" type="button" data-src="media/drama/15s_1.mov" aria-label="播放该片段">
+          <img src="media/posters/drama/15s_1.jpg" alt="" loading="lazy" decoding="async">
+        </button>
         <figcaption>
           <b>参考原片</b>
           <span>被复刻的原始成片</span>
         </figcaption>
       </figure>
       <figure>
-        <video src="media/drama/final.mp4" poster="media/posters/drama/final.jpg" controls muted loop playsinline preload="none"></video>
+        <button class="play" type="button" data-src="media/drama/final.mp4" aria-label="播放该片段">
+          <img src="media/posters/drama/final.jpg" alt="" loading="lazy" decoding="async">
+        </button>
         <figcaption>
           <b>复刻成片</b>
           <span>生成结果</span>
@@ -1013,14 +1108,18 @@
         </figcaption>
       </figure>
       <figure>
-        <video src="media/drama/%E7%A9%BF%E8%B6%8A-%E7%89%99%E8%86%8F.MP4" poster="media/posters/drama/%E7%A9%BF%E8%B6%8A-%E7%89%99%E8%86%8F.jpg" controls muted loop playsinline preload="none"></video>
+        <button class="play" type="button" data-src="media/drama/%E7%A9%BF%E8%B6%8A-%E7%89%99%E8%86%8F.MP4" aria-label="播放该片段">
+          <img src="media/posters/drama/%E7%A9%BF%E8%B6%8A-%E7%89%99%E8%86%8F.jpg" alt="" loading="lazy" decoding="async">
+        </button>
         <figcaption>
           <b>参考原片</b>
           <span>被复刻的原始成片</span>
         </figcaption>
       </figure>
       <figure>
-        <video src="media/drama/final.mp4" poster="media/posters/drama/final.jpg" controls muted loop playsinline preload="none"></video>
+        <button class="play" type="button" data-src="media/drama/final.mp4" aria-label="播放该片段">
+          <img src="media/posters/drama/final.jpg" alt="" loading="lazy" decoding="async">
+        </button>
         <figcaption>
           <b>复刻成片</b>
           <span>生成结果</span>
@@ -1041,14 +1140,18 @@
         </figcaption>
       </figure>
       <figure>
-        <video src="media/drama/%E5%AE%B6%E5%BA%AD%E7%BA%B7%E4%BA%89-%E8%B1%86%E6%B5%86.MP4" poster="media/posters/drama/%E5%AE%B6%E5%BA%AD%E7%BA%B7%E4%BA%89-%E8%B1%86%E6%B5%86.jpg" controls muted loop playsinline preload="none"></video>
+        <button class="play" type="button" data-src="media/drama/%E5%AE%B6%E5%BA%AD%E7%BA%B7%E4%BA%89-%E8%B1%86%E6%B5%86.MP4" aria-label="播放该片段">
+          <img src="media/posters/drama/%E5%AE%B6%E5%BA%AD%E7%BA%B7%E4%BA%89-%E8%B1%86%E6%B5%86.jpg" alt="" loading="lazy" decoding="async">
+        </button>
         <figcaption>
           <b>参考原片</b>
           <span>被复刻的原始成片</span>
         </figcaption>
       </figure>
       <figure>
-        <video src="media/drama/final.mp4" poster="media/posters/drama/final.jpg" controls muted loop playsinline preload="none"></video>
+        <button class="play" type="button" data-src="media/drama/final.mp4" aria-label="播放该片段">
+          <img src="media/posters/drama/final.jpg" alt="" loading="lazy" decoding="async">
+        </button>
         <figcaption>
           <b>复刻成片</b>
           <span>生成结果</span>
@@ -1068,14 +1171,18 @@
     <p class="rowtitle"><b>4</b><em>痛点引入 → 剧情反转 → 产品演示 → 互动暗示</em></p>
     <div class="vids">
       <figure>
-        <video src="media/leadgen/4.mp4" poster="media/posters/leadgen/4.jpg" controls muted loop playsinline preload="none"></video>
+        <button class="play" type="button" data-src="media/leadgen/4.mp4" aria-label="播放该片段">
+          <img src="media/posters/leadgen/4.jpg" alt="" loading="lazy" decoding="async">
+        </button>
         <figcaption>
           <b>参考原片</b>
           <span>被复刻的原始成片</span>
         </figcaption>
       </figure>
       <figure>
-        <video src="media/leadgen/4_%E5%A4%8D%E5%88%BB.mp4" poster="media/posters/leadgen/4_%E5%A4%8D%E5%88%BB.jpg" controls muted loop playsinline preload="none"></video>
+        <button class="play" type="button" data-src="media/leadgen/4_%E5%A4%8D%E5%88%BB.mp4" aria-label="播放该片段">
+          <img src="media/posters/leadgen/4_%E5%A4%8D%E5%88%BB.jpg" alt="" loading="lazy" decoding="async">
+        </button>
         <figcaption>
           <b>复刻成片</b>
           <span>生成结果</span>
@@ -1121,14 +1228,18 @@
     <p class="rowtitle"><b>2</b><em>痛点引入 → 产品引入 → 效果展示 → 行动号召</em></p>
     <div class="vids">
       <figure>
-        <video src="media/leadgen/2.mp4" poster="media/posters/leadgen/2.jpg" controls muted loop playsinline preload="none"></video>
+        <button class="play" type="button" data-src="media/leadgen/2.mp4" aria-label="播放该片段">
+          <img src="media/posters/leadgen/2.jpg" alt="" loading="lazy" decoding="async">
+        </button>
         <figcaption>
           <b>参考原片</b>
           <span>被复刻的原始成片</span>
         </figcaption>
       </figure>
       <figure>
-        <video src="media/leadgen/2_%E5%A4%8D%E5%88%BB.mp4" poster="media/posters/leadgen/2_%E5%A4%8D%E5%88%BB.jpg" controls muted loop playsinline preload="none"></video>
+        <button class="play" type="button" data-src="media/leadgen/2_%E5%A4%8D%E5%88%BB.mp4" aria-label="播放该片段">
+          <img src="media/posters/leadgen/2_%E5%A4%8D%E5%88%BB.jpg" alt="" loading="lazy" decoding="async">
+        </button>
         <figcaption>
           <b>复刻成片</b>
           <span>生成结果</span>
@@ -1174,14 +1285,18 @@
     <p class="rowtitle"><b>3</b><em>痛点引入 → 产品引入 → 效果展示 → 行动号召</em></p>
     <div class="vids">
       <figure>
-        <video src="media/leadgen/3.mp4" poster="media/posters/leadgen/3.jpg" controls muted loop playsinline preload="none"></video>
+        <button class="play" type="button" data-src="media/leadgen/3.mp4" aria-label="播放该片段">
+          <img src="media/posters/leadgen/3.jpg" alt="" loading="lazy" decoding="async">
+        </button>
         <figcaption>
           <b>参考原片</b>
           <span>被复刻的原始成片</span>
         </figcaption>
       </figure>
       <figure>
-        <video src="media/leadgen/3_%E5%A4%8D%E5%88%BB.mp4" poster="media/posters/leadgen/3_%E5%A4%8D%E5%88%BB.jpg" controls muted loop playsinline preload="none"></video>
+        <button class="play" type="button" data-src="media/leadgen/3_%E5%A4%8D%E5%88%BB.mp4" aria-label="播放该片段">
+          <img src="media/posters/leadgen/3_%E5%A4%8D%E5%88%BB.jpg" alt="" loading="lazy" decoding="async">
+        </button>
         <figcaption>
           <b>复刻成片</b>
           <span>生成结果</span>
@@ -1227,14 +1342,18 @@
     <p class="rowtitle"><b>1</b><em>痛点引入 → 效果证明 → 难度升级</em></p>
     <div class="vids">
       <figure>
-        <video src="media/leadgen/1.mp4" poster="media/posters/leadgen/1.jpg" controls muted loop playsinline preload="none"></video>
+        <button class="play" type="button" data-src="media/leadgen/1.mp4" aria-label="播放该片段">
+          <img src="media/posters/leadgen/1.jpg" alt="" loading="lazy" decoding="async">
+        </button>
         <figcaption>
           <b>参考原片</b>
           <span>被复刻的原始成片</span>
         </figcaption>
       </figure>
       <figure>
-        <video src="media/leadgen/1_%E5%A4%8D%E5%88%BB.mp4" poster="media/posters/leadgen/1_%E5%A4%8D%E5%88%BB.jpg" controls muted loop playsinline preload="none"></video>
+        <button class="play" type="button" data-src="media/leadgen/1_%E5%A4%8D%E5%88%BB.mp4" aria-label="播放该片段">
+          <img src="media/posters/leadgen/1_%E5%A4%8D%E5%88%BB.jpg" alt="" loading="lazy" decoding="async">
+        </button>
         <figcaption>
           <b>复刻成片</b>
           <span>生成结果</span>
@@ -1272,14 +1391,18 @@
     <p class="rowtitle"><b>美妆个护-白牌-粉底液-转化</b></p>
     <div class="vids">
       <figure>
-        <video src="media/liveclip/%E7%BE%8E%E5%A6%86%E4%B8%AA%E6%8A%A4-%E7%99%BD%E7%89%8C-%E7%B2%89%E5%BA%95%E6%B6%B2-%E8%BD%AC%E5%8C%96.mp4" poster="media/posters/liveclip/%E7%BE%8E%E5%A6%86%E4%B8%AA%E6%8A%A4-%E7%99%BD%E7%89%8C-%E7%B2%89%E5%BA%95%E6%B6%B2-%E8%BD%AC%E5%8C%96.jpg" controls muted loop playsinline preload="none"></video>
+        <button class="play" type="button" data-src="media/liveclip/%E7%BE%8E%E5%A6%86%E4%B8%AA%E6%8A%A4-%E7%99%BD%E7%89%8C-%E7%B2%89%E5%BA%95%E6%B6%B2-%E8%BD%AC%E5%8C%96.mp4" aria-label="播放该片段">
+          <img src="media/posters/liveclip/%E7%BE%8E%E5%A6%86%E4%B8%AA%E6%8A%A4-%E7%99%BD%E7%89%8C-%E7%B2%89%E5%BA%95%E6%B6%B2-%E8%BD%AC%E5%8C%96.jpg" alt="" loading="lazy" decoding="async">
+        </button>
         <figcaption>
           <b>参考原片</b>
           <span>被复刻的原始成片</span>
         </figcaption>
       </figure>
       <figure>
-        <video src="media/liveclip/%E9%A6%99%E6%B0%B4_%E7%B2%89%E5%BA%95%E6%B6%B2.mp4" poster="media/posters/liveclip/%E9%A6%99%E6%B0%B4_%E7%B2%89%E5%BA%95%E6%B6%B2.jpg" controls muted loop playsinline preload="none"></video>
+        <button class="play" type="button" data-src="media/liveclip/%E9%A6%99%E6%B0%B4_%E7%B2%89%E5%BA%95%E6%B6%B2.mp4" aria-label="播放该片段">
+          <img src="media/posters/liveclip/%E9%A6%99%E6%B0%B4_%E7%B2%89%E5%BA%95%E6%B6%B2.jpg" alt="" loading="lazy" decoding="async">
+        </button>
         <figcaption>
           <b>复刻成片</b>
           <span>生成结果</span>
@@ -1299,42 +1422,54 @@
     <p class="rowtitle"><b>服装-白牌-背心-转化</b></p>
     <div class="vids">
       <figure>
-        <video src="media/liveclip/%E6%9C%8D%E8%A3%85-%E7%99%BD%E7%89%8C-%E8%83%8C%E5%BF%83-%E8%BD%AC%E5%8C%96.mp4" poster="media/posters/liveclip/%E6%9C%8D%E8%A3%85-%E7%99%BD%E7%89%8C-%E8%83%8C%E5%BF%83-%E8%BD%AC%E5%8C%96.jpg" controls muted loop playsinline preload="none"></video>
+        <button class="play" type="button" data-src="media/liveclip/%E6%9C%8D%E8%A3%85-%E7%99%BD%E7%89%8C-%E8%83%8C%E5%BF%83-%E8%BD%AC%E5%8C%96.mp4" aria-label="播放该片段">
+          <img src="media/posters/liveclip/%E6%9C%8D%E8%A3%85-%E7%99%BD%E7%89%8C-%E8%83%8C%E5%BF%83-%E8%BD%AC%E5%8C%96.jpg" alt="" loading="lazy" decoding="async">
+        </button>
         <figcaption>
           <b>参考原片</b>
           <span>被复刻的原始成片</span>
         </figcaption>
       </figure>
       <figure>
-        <video src="media/liveclip/%E5%8C%85%201_%E8%83%8C%E5%BF%83.mp4" poster="media/posters/liveclip/%E5%8C%85%201_%E8%83%8C%E5%BF%83.jpg" controls muted loop playsinline preload="none"></video>
+        <button class="play" type="button" data-src="media/liveclip/%E5%8C%85%201_%E8%83%8C%E5%BF%83.mp4" aria-label="播放该片段">
+          <img src="media/posters/liveclip/%E5%8C%85%201_%E8%83%8C%E5%BF%83.jpg" alt="" loading="lazy" decoding="async">
+        </button>
         <figcaption>
           <b>复刻成片</b>
           <span>生成结果</span>
         </figcaption>
       </figure>
       <figure>
-        <video src="media/liveclip/%E5%94%A4%E8%B5%B7%E7%94%A8%E6%88%B7%E5%88%9A%E9%9C%80-1.mov" poster="media/posters/liveclip/%E5%94%A4%E8%B5%B7%E7%94%A8%E6%88%B7%E5%88%9A%E9%9C%80-1.jpg" controls muted loop playsinline preload="none"></video>
+        <button class="play" type="button" data-src="media/liveclip/%E5%94%A4%E8%B5%B7%E7%94%A8%E6%88%B7%E5%88%9A%E9%9C%80-1.mov" aria-label="播放该片段">
+          <img src="media/posters/liveclip/%E5%94%A4%E8%B5%B7%E7%94%A8%E6%88%B7%E5%88%9A%E9%9C%80-1.jpg" alt="" loading="lazy" decoding="async">
+        </button>
         <figcaption>
           <b>分镜片段</b>
           <span>分镜级片段</span>
         </figcaption>
       </figure>
       <figure>
-        <video src="media/liveclip/%E5%BC%BA%E8%B0%83%E5%B7%A5%E8%89%BA-1.mov" poster="media/posters/liveclip/%E5%BC%BA%E8%B0%83%E5%B7%A5%E8%89%BA-1.jpg" controls muted loop playsinline preload="none"></video>
+        <button class="play" type="button" data-src="media/liveclip/%E5%BC%BA%E8%B0%83%E5%B7%A5%E8%89%BA-1.mov" aria-label="播放该片段">
+          <img src="media/posters/liveclip/%E5%BC%BA%E8%B0%83%E5%B7%A5%E8%89%BA-1.jpg" alt="" loading="lazy" decoding="async">
+        </button>
         <figcaption>
           <b>分镜片段</b>
           <span>分镜级片段</span>
         </figcaption>
       </figure>
       <figure>
-        <video src="media/liveclip/%E5%88%B6%E4%BD%9C%E6%8D%A1%E6%BC%8F%E6%84%9F-1.mov" poster="media/posters/liveclip/%E5%88%B6%E4%BD%9C%E6%8D%A1%E6%BC%8F%E6%84%9F-1.jpg" controls muted loop playsinline preload="none"></video>
+        <button class="play" type="button" data-src="media/liveclip/%E5%88%B6%E4%BD%9C%E6%8D%A1%E6%BC%8F%E6%84%9F-1.mov" aria-label="播放该片段">
+          <img src="media/posters/liveclip/%E5%88%B6%E4%BD%9C%E6%8D%A1%E6%BC%8F%E6%84%9F-1.jpg" alt="" loading="lazy" decoding="async">
+        </button>
         <figcaption>
           <b>分镜片段</b>
           <span>分镜级片段</span>
         </figcaption>
       </figure>
       <figure>
-        <video src="media/liveclip/%E5%94%AE%E5%90%8E%E6%89%BF%E8%AF%BA-1.mov" poster="media/posters/liveclip/%E5%94%AE%E5%90%8E%E6%89%BF%E8%AF%BA-1.jpg" controls muted loop playsinline preload="none"></video>
+        <button class="play" type="button" data-src="media/liveclip/%E5%94%AE%E5%90%8E%E6%89%BF%E8%AF%BA-1.mov" aria-label="播放该片段">
+          <img src="media/posters/liveclip/%E5%94%AE%E5%90%8E%E6%89%BF%E8%AF%BA-1.jpg" alt="" loading="lazy" decoding="async">
+        </button>
         <figcaption>
           <b>分镜片段</b>
           <span>分镜级片段</span>
@@ -1346,112 +1481,144 @@
     <p class="rowtitle"><b>日用-白牌-牙膏-转化</b><em>痛点唤醒 → 人群匹配 → 产品细节 → 产品细节多样性 → 核心工艺原理 → 建立真实信任感 → 促使下单</em></p>
     <div class="vids">
       <figure>
-        <video src="media/liveclip/%E6%97%A5%E7%94%A8-%E7%99%BD%E7%89%8C-%E7%89%99%E8%86%8F-%E8%BD%AC%E5%8C%96.mp4" poster="media/posters/liveclip/%E6%97%A5%E7%94%A8-%E7%99%BD%E7%89%8C-%E7%89%99%E8%86%8F-%E8%BD%AC%E5%8C%96.jpg" controls muted loop playsinline preload="none"></video>
+        <button class="play" type="button" data-src="media/liveclip/%E6%97%A5%E7%94%A8-%E7%99%BD%E7%89%8C-%E7%89%99%E8%86%8F-%E8%BD%AC%E5%8C%96.mp4" aria-label="播放该片段">
+          <img src="media/posters/liveclip/%E6%97%A5%E7%94%A8-%E7%99%BD%E7%89%8C-%E7%89%99%E8%86%8F-%E8%BD%AC%E5%8C%96.jpg" alt="" loading="lazy" decoding="async">
+        </button>
         <figcaption>
           <b>参考原片</b>
           <span>被复刻的原始成片</span>
         </figcaption>
       </figure>
       <figure>
-        <video src="media/liveclip/%E6%9C%8D%E8%A3%85%204%20%E7%89%99%E8%86%8F.mp4" poster="media/posters/liveclip/%E6%9C%8D%E8%A3%85%204%20%E7%89%99%E8%86%8F.jpg" controls muted loop playsinline preload="none"></video>
+        <button class="play" type="button" data-src="media/liveclip/%E6%9C%8D%E8%A3%85%204%20%E7%89%99%E8%86%8F.mp4" aria-label="播放该片段">
+          <img src="media/posters/liveclip/%E6%9C%8D%E8%A3%85%204%20%E7%89%99%E8%86%8F.jpg" alt="" loading="lazy" decoding="async">
+        </button>
         <figcaption>
           <b>复刻成片</b>
           <span>生成结果</span>
         </figcaption>
       </figure>
       <figure>
-        <video src="media/liveclip/%E7%89%99%E8%86%8F_%E7%97%9B%E7%82%B9%E5%94%A4%E9%86%92.mp4" poster="media/posters/liveclip/%E7%89%99%E8%86%8F_%E7%97%9B%E7%82%B9%E5%94%A4%E9%86%92.jpg" controls muted loop playsinline preload="none"></video>
+        <button class="play" type="button" data-src="media/liveclip/%E7%89%99%E8%86%8F_%E7%97%9B%E7%82%B9%E5%94%A4%E9%86%92.mp4" aria-label="播放该片段">
+          <img src="media/posters/liveclip/%E7%89%99%E8%86%8F_%E7%97%9B%E7%82%B9%E5%94%A4%E9%86%92.jpg" alt="" loading="lazy" decoding="async">
+        </button>
         <figcaption>
           <b>痛点唤醒</b>
           <span>分镜级片段</span>
         </figcaption>
       </figure>
       <figure>
-        <video src="media/liveclip/%E7%89%99%E8%86%8F_%E6%9C%8D%E8%A3%85%204_%E7%97%9B%E7%82%B9%E5%94%A4%E9%86%92.mp4" poster="media/posters/liveclip/%E7%89%99%E8%86%8F_%E6%9C%8D%E8%A3%85%204_%E7%97%9B%E7%82%B9%E5%94%A4%E9%86%92.jpg" controls muted loop playsinline preload="none"></video>
+        <button class="play" type="button" data-src="media/liveclip/%E7%89%99%E8%86%8F_%E6%9C%8D%E8%A3%85%204_%E7%97%9B%E7%82%B9%E5%94%A4%E9%86%92.mp4" aria-label="播放该片段">
+          <img src="media/posters/liveclip/%E7%89%99%E8%86%8F_%E6%9C%8D%E8%A3%85%204_%E7%97%9B%E7%82%B9%E5%94%A4%E9%86%92.jpg" alt="" loading="lazy" decoding="async">
+        </button>
         <figcaption>
           <b>痛点唤醒</b>
           <span>分镜级片段</span>
         </figcaption>
       </figure>
       <figure>
-        <video src="media/liveclip/%E7%89%99%E8%86%8F_%E4%BA%BA%E7%BE%A4%E5%8C%B9%E9%85%8D.mp4" poster="media/posters/liveclip/%E7%89%99%E8%86%8F_%E4%BA%BA%E7%BE%A4%E5%8C%B9%E9%85%8D.jpg" controls muted loop playsinline preload="none"></video>
+        <button class="play" type="button" data-src="media/liveclip/%E7%89%99%E8%86%8F_%E4%BA%BA%E7%BE%A4%E5%8C%B9%E9%85%8D.mp4" aria-label="播放该片段">
+          <img src="media/posters/liveclip/%E7%89%99%E8%86%8F_%E4%BA%BA%E7%BE%A4%E5%8C%B9%E9%85%8D.jpg" alt="" loading="lazy" decoding="async">
+        </button>
         <figcaption>
           <b>人群匹配</b>
           <span>分镜级片段</span>
         </figcaption>
       </figure>
       <figure>
-        <video src="media/liveclip/%E7%89%99%E8%86%8F_%E6%9C%8D%E8%A3%85%204_%E4%BA%BA%E7%BE%A4%E5%8C%B9%E9%85%8D.mp4" poster="media/posters/liveclip/%E7%89%99%E8%86%8F_%E6%9C%8D%E8%A3%85%204_%E4%BA%BA%E7%BE%A4%E5%8C%B9%E9%85%8D.jpg" controls muted loop playsinline preload="none"></video>
+        <button class="play" type="button" data-src="media/liveclip/%E7%89%99%E8%86%8F_%E6%9C%8D%E8%A3%85%204_%E4%BA%BA%E7%BE%A4%E5%8C%B9%E9%85%8D.mp4" aria-label="播放该片段">
+          <img src="media/posters/liveclip/%E7%89%99%E8%86%8F_%E6%9C%8D%E8%A3%85%204_%E4%BA%BA%E7%BE%A4%E5%8C%B9%E9%85%8D.jpg" alt="" loading="lazy" decoding="async">
+        </button>
         <figcaption>
           <b>人群匹配</b>
           <span>分镜级片段</span>
         </figcaption>
       </figure>
       <figure>
-        <video src="media/liveclip/%E7%89%99%E8%86%8F_%E4%BA%A7%E5%93%81%E7%BB%86%E8%8A%82.mp4" poster="media/posters/liveclip/%E7%89%99%E8%86%8F_%E4%BA%A7%E5%93%81%E7%BB%86%E8%8A%82.jpg" controls muted loop playsinline preload="none"></video>
+        <button class="play" type="button" data-src="media/liveclip/%E7%89%99%E8%86%8F_%E4%BA%A7%E5%93%81%E7%BB%86%E8%8A%82.mp4" aria-label="播放该片段">
+          <img src="media/posters/liveclip/%E7%89%99%E8%86%8F_%E4%BA%A7%E5%93%81%E7%BB%86%E8%8A%82.jpg" alt="" loading="lazy" decoding="async">
+        </button>
         <figcaption>
           <b>产品细节</b>
           <span>分镜级片段</span>
         </figcaption>
       </figure>
       <figure>
-        <video src="media/liveclip/%E7%89%99%E8%86%8F_%E6%9C%8D%E8%A3%85%204_%E4%BA%A7%E5%93%81%E7%BB%86%E8%8A%82.mp4" poster="media/posters/liveclip/%E7%89%99%E8%86%8F_%E6%9C%8D%E8%A3%85%204_%E4%BA%A7%E5%93%81%E7%BB%86%E8%8A%82.jpg" controls muted loop playsinline preload="none"></video>
+        <button class="play" type="button" data-src="media/liveclip/%E7%89%99%E8%86%8F_%E6%9C%8D%E8%A3%85%204_%E4%BA%A7%E5%93%81%E7%BB%86%E8%8A%82.mp4" aria-label="播放该片段">
+          <img src="media/posters/liveclip/%E7%89%99%E8%86%8F_%E6%9C%8D%E8%A3%85%204_%E4%BA%A7%E5%93%81%E7%BB%86%E8%8A%82.jpg" alt="" loading="lazy" decoding="async">
+        </button>
         <figcaption>
           <b>产品细节</b>
           <span>分镜级片段</span>
         </figcaption>
       </figure>
       <figure>
-        <video src="media/liveclip/%E7%89%99%E8%86%8F_%E4%BA%A7%E5%93%81%E7%BB%86%E8%8A%82%E5%A4%9A%E6%A0%B7%E6%80%A7.mp4" poster="media/posters/liveclip/%E7%89%99%E8%86%8F_%E4%BA%A7%E5%93%81%E7%BB%86%E8%8A%82%E5%A4%9A%E6%A0%B7%E6%80%A7.jpg" controls muted loop playsinline preload="none"></video>
+        <button class="play" type="button" data-src="media/liveclip/%E7%89%99%E8%86%8F_%E4%BA%A7%E5%93%81%E7%BB%86%E8%8A%82%E5%A4%9A%E6%A0%B7%E6%80%A7.mp4" aria-label="播放该片段">
+          <img src="media/posters/liveclip/%E7%89%99%E8%86%8F_%E4%BA%A7%E5%93%81%E7%BB%86%E8%8A%82%E5%A4%9A%E6%A0%B7%E6%80%A7.jpg" alt="" loading="lazy" decoding="async">
+        </button>
         <figcaption>
           <b>产品细节多样性</b>
           <span>分镜级片段</span>
         </figcaption>
       </figure>
       <figure>
-        <video src="media/liveclip/%E7%89%99%E8%86%8F_%E6%9C%8D%E8%A3%85%204_%E4%BA%A7%E5%93%81%E7%BB%86%E8%8A%82%E5%A4%9A%E6%A0%B7%E6%80%A7.mp4" poster="media/posters/liveclip/%E7%89%99%E8%86%8F_%E6%9C%8D%E8%A3%85%204_%E4%BA%A7%E5%93%81%E7%BB%86%E8%8A%82%E5%A4%9A%E6%A0%B7%E6%80%A7.jpg" controls muted loop playsinline preload="none"></video>
+        <button class="play" type="button" data-src="media/liveclip/%E7%89%99%E8%86%8F_%E6%9C%8D%E8%A3%85%204_%E4%BA%A7%E5%93%81%E7%BB%86%E8%8A%82%E5%A4%9A%E6%A0%B7%E6%80%A7.mp4" aria-label="播放该片段">
+          <img src="media/posters/liveclip/%E7%89%99%E8%86%8F_%E6%9C%8D%E8%A3%85%204_%E4%BA%A7%E5%93%81%E7%BB%86%E8%8A%82%E5%A4%9A%E6%A0%B7%E6%80%A7.jpg" alt="" loading="lazy" decoding="async">
+        </button>
         <figcaption>
           <b>产品细节多样性</b>
           <span>分镜级片段</span>
         </figcaption>
       </figure>
       <figure>
-        <video src="media/liveclip/%E7%89%99%E8%86%8F_%E6%A0%B8%E5%BF%83%E5%B7%A5%E8%89%BA%E5%8E%9F%E7%90%86.mp4" poster="media/posters/liveclip/%E7%89%99%E8%86%8F_%E6%A0%B8%E5%BF%83%E5%B7%A5%E8%89%BA%E5%8E%9F%E7%90%86.jpg" controls muted loop playsinline preload="none"></video>
+        <button class="play" type="button" data-src="media/liveclip/%E7%89%99%E8%86%8F_%E6%A0%B8%E5%BF%83%E5%B7%A5%E8%89%BA%E5%8E%9F%E7%90%86.mp4" aria-label="播放该片段">
+          <img src="media/posters/liveclip/%E7%89%99%E8%86%8F_%E6%A0%B8%E5%BF%83%E5%B7%A5%E8%89%BA%E5%8E%9F%E7%90%86.jpg" alt="" loading="lazy" decoding="async">
+        </button>
         <figcaption>
           <b>核心工艺原理</b>
           <span>分镜级片段</span>
         </figcaption>
       </figure>
       <figure>
-        <video src="media/liveclip/%E7%89%99%E8%86%8F_%E6%9C%8D%E8%A3%85%204_%E6%A0%B8%E5%BF%83%E5%B7%A5%E8%89%BA%E5%8E%9F%E7%90%86.mp4" poster="media/posters/liveclip/%E7%89%99%E8%86%8F_%E6%9C%8D%E8%A3%85%204_%E6%A0%B8%E5%BF%83%E5%B7%A5%E8%89%BA%E5%8E%9F%E7%90%86.jpg" controls muted loop playsinline preload="none"></video>
+        <button class="play" type="button" data-src="media/liveclip/%E7%89%99%E8%86%8F_%E6%9C%8D%E8%A3%85%204_%E6%A0%B8%E5%BF%83%E5%B7%A5%E8%89%BA%E5%8E%9F%E7%90%86.mp4" aria-label="播放该片段">
+          <img src="media/posters/liveclip/%E7%89%99%E8%86%8F_%E6%9C%8D%E8%A3%85%204_%E6%A0%B8%E5%BF%83%E5%B7%A5%E8%89%BA%E5%8E%9F%E7%90%86.jpg" alt="" loading="lazy" decoding="async">
+        </button>
         <figcaption>
           <b>核心工艺原理</b>
           <span>分镜级片段</span>
         </figcaption>
       </figure>
       <figure>
-        <video src="media/liveclip/%E7%89%99%E8%86%8F_%E5%BB%BA%E7%AB%8B%E7%9C%9F%E5%AE%9E%E4%BF%A1%E4%BB%BB%E6%84%9F.mp4" poster="media/posters/liveclip/%E7%89%99%E8%86%8F_%E5%BB%BA%E7%AB%8B%E7%9C%9F%E5%AE%9E%E4%BF%A1%E4%BB%BB%E6%84%9F.jpg" controls muted loop playsinline preload="none"></video>
+        <button class="play" type="button" data-src="media/liveclip/%E7%89%99%E8%86%8F_%E5%BB%BA%E7%AB%8B%E7%9C%9F%E5%AE%9E%E4%BF%A1%E4%BB%BB%E6%84%9F.mp4" aria-label="播放该片段">
+          <img src="media/posters/liveclip/%E7%89%99%E8%86%8F_%E5%BB%BA%E7%AB%8B%E7%9C%9F%E5%AE%9E%E4%BF%A1%E4%BB%BB%E6%84%9F.jpg" alt="" loading="lazy" decoding="async">
+        </button>
         <figcaption>
           <b>建立真实信任感</b>
           <span>分镜级片段</span>
         </figcaption>
       </figure>
       <figure>
-        <video src="media/liveclip/%E7%89%99%E8%86%8F_%E6%9C%8D%E8%A3%85%204_%E5%BB%BA%E7%AB%8B%E7%9C%9F%E5%AE%9E%E4%BF%A1%E4%BB%BB%E6%84%9F.mp4" poster="media/posters/liveclip/%E7%89%99%E8%86%8F_%E6%9C%8D%E8%A3%85%204_%E5%BB%BA%E7%AB%8B%E7%9C%9F%E5%AE%9E%E4%BF%A1%E4%BB%BB%E6%84%9F.jpg" controls muted loop playsinline preload="none"></video>
+        <button class="play" type="button" data-src="media/liveclip/%E7%89%99%E8%86%8F_%E6%9C%8D%E8%A3%85%204_%E5%BB%BA%E7%AB%8B%E7%9C%9F%E5%AE%9E%E4%BF%A1%E4%BB%BB%E6%84%9F.mp4" aria-label="播放该片段">
+          <img src="media/posters/liveclip/%E7%89%99%E8%86%8F_%E6%9C%8D%E8%A3%85%204_%E5%BB%BA%E7%AB%8B%E7%9C%9F%E5%AE%9E%E4%BF%A1%E4%BB%BB%E6%84%9F.jpg" alt="" loading="lazy" decoding="async">
+        </button>
         <figcaption>
           <b>建立真实信任感</b>
           <span>分镜级片段</span>
         </figcaption>
       </figure>
       <figure>
-        <video src="media/liveclip/%E7%89%99%E8%86%8F_%E4%BF%83%E4%BD%BF%E4%B8%8B%E5%8D%95.mp4" poster="media/posters/liveclip/%E7%89%99%E8%86%8F_%E4%BF%83%E4%BD%BF%E4%B8%8B%E5%8D%95.jpg" controls muted loop playsinline preload="none"></video>
+        <button class="play" type="button" data-src="media/liveclip/%E7%89%99%E8%86%8F_%E4%BF%83%E4%BD%BF%E4%B8%8B%E5%8D%95.mp4" aria-label="播放该片段">
+          <img src="media/posters/liveclip/%E7%89%99%E8%86%8F_%E4%BF%83%E4%BD%BF%E4%B8%8B%E5%8D%95.jpg" alt="" loading="lazy" decoding="async">
+        </button>
         <figcaption>
           <b>促使下单</b>
           <span>分镜级片段</span>
         </figcaption>
       </figure>
       <figure>
-        <video src="media/liveclip/%E7%89%99%E8%86%8F_%E6%9C%8D%E8%A3%85%204_%E4%BF%83%E4%BD%BF%E4%B8%8B%E5%8D%95.mp4" poster="media/posters/liveclip/%E7%89%99%E8%86%8F_%E6%9C%8D%E8%A3%85%204_%E4%BF%83%E4%BD%BF%E4%B8%8B%E5%8D%95.jpg" controls muted loop playsinline preload="none"></video>
+        <button class="play" type="button" data-src="media/liveclip/%E7%89%99%E8%86%8F_%E6%9C%8D%E8%A3%85%204_%E4%BF%83%E4%BD%BF%E4%B8%8B%E5%8D%95.mp4" aria-label="播放该片段">
+          <img src="media/posters/liveclip/%E7%89%99%E8%86%8F_%E6%9C%8D%E8%A3%85%204_%E4%BF%83%E4%BD%BF%E4%B8%8B%E5%8D%95.jpg" alt="" loading="lazy" decoding="async">
+        </button>
         <figcaption>
           <b>促使下单</b>
           <span>分镜级片段</span>
@@ -1463,14 +1630,18 @@
     <p class="rowtitle"><b>零食-品牌-饮料-曝光</b></p>
     <div class="vids">
       <figure>
-        <video src="media/liveclip/%E9%9B%B6%E9%A3%9F-%E5%93%81%E7%89%8C-%E9%A5%AE%E6%96%99-%E6%9B%9D%E5%85%89.mp4" poster="media/posters/liveclip/%E9%9B%B6%E9%A3%9F-%E5%93%81%E7%89%8C-%E9%A5%AE%E6%96%99-%E6%9B%9D%E5%85%89.jpg" controls muted loop playsinline preload="none"></video>
+        <button class="play" type="button" data-src="media/liveclip/%E9%9B%B6%E9%A3%9F-%E5%93%81%E7%89%8C-%E9%A5%AE%E6%96%99-%E6%9B%9D%E5%85%89.mp4" aria-label="播放该片段">
+          <img src="media/posters/liveclip/%E9%9B%B6%E9%A3%9F-%E5%93%81%E7%89%8C-%E9%A5%AE%E6%96%99-%E6%9B%9D%E5%85%89.jpg" alt="" loading="lazy" decoding="async">
+        </button>
         <figcaption>
           <b>参考原片</b>
           <span>被复刻的原始成片</span>
         </figcaption>
       </figure>
       <figure>
-        <video src="media/liveclip/%E6%9C%8D%E8%A3%85%203_%E9%A5%AE%E6%96%99.mp4" poster="media/posters/liveclip/%E6%9C%8D%E8%A3%85%203_%E9%A5%AE%E6%96%99.jpg" controls muted loop playsinline preload="none"></video>
+        <button class="play" type="button" data-src="media/liveclip/%E6%9C%8D%E8%A3%85%203_%E9%A5%AE%E6%96%99.mp4" aria-label="播放该片段">
+          <img src="media/posters/liveclip/%E6%9C%8D%E8%A3%85%203_%E9%A5%AE%E6%96%99.jpg" alt="" loading="lazy" decoding="async">
+        </button>
         <figcaption>
           <b>复刻成片</b>
           <span>生成结果</span>
@@ -1482,14 +1653,18 @@
     <p class="rowtitle"><b>零食-品牌-饮料-曝光</b></p>
     <div class="vids">
       <figure>
-        <video src="media/liveclip/%E9%9B%B6%E9%A3%9F-%E5%93%81%E7%89%8C-%E9%A5%AE%E6%96%99-%E6%9B%9D%E5%85%89.mp4" poster="media/posters/liveclip/%E9%9B%B6%E9%A3%9F-%E5%93%81%E7%89%8C-%E9%A5%AE%E6%96%99-%E6%9B%9D%E5%85%89.jpg" controls muted loop playsinline preload="none"></video>
+        <button class="play" type="button" data-src="media/liveclip/%E9%9B%B6%E9%A3%9F-%E5%93%81%E7%89%8C-%E9%A5%AE%E6%96%99-%E6%9B%9D%E5%85%89.mp4" aria-label="播放该片段">
+          <img src="media/posters/liveclip/%E9%9B%B6%E9%A3%9F-%E5%93%81%E7%89%8C-%E9%A5%AE%E6%96%99-%E6%9B%9D%E5%85%89.jpg" alt="" loading="lazy" decoding="async">
+        </button>
         <figcaption>
           <b>参考原片</b>
           <span>被复刻的原始成片</span>
         </figcaption>
       </figure>
       <figure>
-        <video src="media/liveclip/%E7%89%9B%E5%A5%B6_%E9%A5%AE%E6%96%99%202.mp4" poster="media/posters/liveclip/%E7%89%9B%E5%A5%B6_%E9%A5%AE%E6%96%99%202.jpg" controls muted loop playsinline preload="none"></video>
+        <button class="play" type="button" data-src="media/liveclip/%E7%89%9B%E5%A5%B6_%E9%A5%AE%E6%96%99%202.mp4" aria-label="播放该片段">
+          <img src="media/posters/liveclip/%E7%89%9B%E5%A5%B6_%E9%A5%AE%E6%96%99%202.jpg" alt="" loading="lazy" decoding="async">
+        </button>
         <figcaption>
           <b>复刻成片</b>
           <span>生成结果</span>
@@ -1511,5 +1686,18 @@
     <!-- 邮箱/简历链接想放就补在这里 -->
   </div>
 </footer>
+<script>
+// 点击才创建 video 元素：首屏不加载任何视频，也不为 79 个媒体元素分配资源
+document.addEventListener('click', function (e) {
+  var b = e.target.closest && e.target.closest('.play');
+  if (!b) return;
+  var v = document.createElement('video');
+  v.src = b.dataset.src;
+  v.poster = b.querySelector('img').getAttribute('src');
+  v.controls = true; v.autoplay = true; v.muted = true;
+  v.loop = true; v.playsInline = true;
+  b.replaceWith(v);
+});
+</script>
 </body>
 </html>
