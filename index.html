@@ -34,7 +34,7 @@
     padding:6px 14px; font-size:14px; color:var(--muted); background:var(--panel);
   }
   figure{margin:0; background:var(--panel); border:1px solid var(--line); border-radius:12px; overflow:hidden}
-  figure video{display:block; width:100%; aspect-ratio:9/16; background:#000}
+  figure video{display:block; width:100%; aspect-ratio:9/16; background:#000; object-fit:contain}
   .slot{
     display:flex; align-items:center; justify-content:center; text-align:center;
     aspect-ratio:9/16; padding:20px; color:var(--muted); font-size:14px;
@@ -102,39 +102,98 @@
 
 <section>
   <div class="wrap">
-    <h2>案例</h2>
+    <h2>口播带货成片</h2>
     <div class="grid">
-      <!--
-        放素材的方法：把视频文件放进 media/，再把 .slot 整块换成
-        <video src="media/xxx.mp4" controls muted loop playsinline preload="metadata"></video>
-        只放你本人拥有版权、或已获授权可公开的素材。
-      -->
       <figure>
-        <div class="slot">案例位 1 · 待放入成片</div>
+        <video src="media/%E9%BB%91%E5%B7%A7%E5%92%96%E5%95%A1%2Bbgm.mov" controls muted loop playsinline preload="metadata"></video>
         <figcaption>
-          <b>冲调饮品 · 口播带货</b>
-          <span>反向切入 → 成分说明 → 冲泡演示 → 结尾促单</span>
+          <b>冲调饮品 · 黑巧咖啡</b>
+          <span>反向营销 → 成分说明 → 冲兑展示 → 结尾促单</span>
         </figcaption>
       </figure>
       <figure>
-        <div class="slot">案例位 2 · 待放入成片</div>
+        <video src="media/黑巧卡.mov" controls muted loop playsinline preload="metadata"></video>
         <figcaption>
-          <b>头发造型 · 痛点向</b>
-          <span>痛点唤起 → 操作演示 → 前后对比</span>
+          <b>冲调饮品 · 第二版结构</b>
+          <span>食用展示 → 信任背书 → 成分介绍 → 结尾促销</span>
         </figcaption>
       </figure>
       <figure>
-        <div class="slot">案例位 3 · 待放入成片</div>
+        <video src="media/美妆.mov" controls muted loop playsinline preload="metadata"></video>
         <figcaption>
-          <b>箱包 · 纯商品展示</b>
-          <span>手持展示 → 容积展示 → 细节特写 → 场景放置</span>
+          <b>美妆个护 · 泥膜棒</b>
+          <span>焦虑制造 → 商品使用 → 原理介绍 → 结尾促单</span>
         </figcaption>
       </figure>
       <figure>
-        <div class="slot">案例位 4 · 待放入成片</div>
+        <video src="media/耳塞无重点.mov" controls muted loop playsinline preload="metadata"></video>
         <figcaption>
-          <b>饰品眼镜 · 佩戴向</b>
-          <span>佩戴动作 → 近景细节 → 半身效果</span>
+          <b>数码配件 · 降噪耳塞</b>
+          <span>夸张体验 → 设计介绍 → 使用场景 → 痛点营销</span>
+        </figcaption>
+      </figure>
+      <figure>
+        <video src="media/泡沫.mov" controls muted loop playsinline preload="metadata"></video>
+        <figcaption>
+          <b>头发造型 · 干发慕斯</b>
+          <span>痛点营销 → 操作展示</span>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>商品展示成片</h2>
+    <div class="grid">
+      <figure>
+        <video src="media/包包.mp4" controls muted loop playsinline preload="metadata"></video>
+        <figcaption>
+          <b>箱包 · 手持向</b>
+          <span>手持展示 → 容积展示 → 放置展示 → 商品交互</span>
+        </figcaption>
+      </figure>
+      <figure>
+        <video src="media/agentcut_20260731_112313_loop1.mp4" controls muted loop playsinline preload="metadata"></video>
+        <figcaption>
+          <b>箱包 · 循环版</b>
+          <span>同一组素材的另一种分镜排布</span>
+        </figcaption>
+      </figure>
+      <figure>
+        <video src="media/agentcut_20260731_175216_loop1.mp4" controls muted loop playsinline preload="metadata"></video>
+        <figcaption>
+          <b>饰品 · 项链</b>
+          <span>佩戴展示 → 细节展示</span>
+        </figcaption>
+      </figure>
+      <figure>
+        <video src="media/agentcut_20260803_183322_loop1_副本2.mp4" controls muted loop playsinline preload="metadata"></video>
+        <figcaption>
+          <b>饰品 · 项链第二版</b>
+          <span>调整佩戴镜头时长后的版本</span>
+        </figcaption>
+      </figure>
+      <figure>
+        <video src="media/agentcut_20260731_182532_loop1.mp4" controls muted loop playsinline preload="metadata"></video>
+        <figcaption>
+          <b>眼镜 · 猫眼墨镜</b>
+          <span>佩戴动作 → 近景展示 → 半身展示</span>
+        </figcaption>
+      </figure>
+      <figure>
+        <video src="media/修改后.mp4" controls muted loop playsinline preload="metadata"></video>
+        <figcaption>
+          <b>熟食 · 牛肉饼</b>
+          <span>切面展示 → 制作过程 → 食欲营销 → 食材展示</span>
+        </figcaption>
+      </figure>
+      <figure>
+        <video src="media/agentcut_20260731_175830_loop1.mp4" controls muted loop playsinline preload="metadata"></video>
+        <figcaption>
+          <b>熟食 · 牛肉饼循环版</b>
+          <span>压缩前段、加重食欲镜头的版本</span>
         </figcaption>
       </figure>
     </div>
