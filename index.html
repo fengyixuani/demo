@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>短视频生成作品集 · @fengyixuani</title>
+<meta name="description" content="参考视频驱动的短视频生成与分镜复刻作品集。">
+<style>
+  :root{
+    --bg:#0d0f13; --panel:#151922; --line:#242b38;
+    --fg:#e8ecf3; --muted:#9aa5b8; --accent:#6ea8fe;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--bg); color:var(--fg);
+    font:16px/1.7 -apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  }
+  a{color:var(--accent)}
+  a:focus-visible,button:focus-visible{outline:2px solid var(--accent); outline-offset:3px}
+  .wrap{max-width:960px; margin:0 auto; padding:0 24px}
+  header{padding:80px 0 48px; border-bottom:1px solid var(--line)}
+  h1{margin:0 0 12px; font-size:clamp(28px,5vw,42px); line-height:1.25; letter-spacing:-.02em}
+  .handle{margin:0; color:var(--muted); font-size:15px}
+  .lede{margin:24px 0 0; max-width:60ch; color:var(--muted); font-size:17px}
+  section{padding:56px 0; border-bottom:1px solid var(--line)}
+  h2{margin:0 0 28px; font-size:13px; font-weight:600; letter-spacing:.12em; text-transform:uppercase; color:var(--muted)}
+  h3{margin:0 0 8px; font-size:17px}
+  .grid{display:grid; gap:16px; grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+  .card{background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:22px}
+  .card p{margin:0; color:var(--muted); font-size:15px}
+  ul.tags{display:flex; flex-wrap:wrap; gap:10px; margin:0; padding:0; list-style:none}
+  ul.tags li{
+    border:1px solid var(--line); border-radius:999px;
+    padding:6px 14px; font-size:14px; color:var(--muted); background:var(--panel);
+  }
+  figure{margin:0; background:var(--panel); border:1px solid var(--line); border-radius:12px; overflow:hidden}
+  figure video{display:block; width:100%; aspect-ratio:9/16; background:#000}
+  .slot{
+    display:flex; align-items:center; justify-content:center; text-align:center;
+    aspect-ratio:9/16; padding:20px; color:var(--muted); font-size:14px;
+    border-bottom:1px solid var(--line);
+  }
+  figcaption{padding:14px 18px; font-size:14px}
+  figcaption b{display:block; font-weight:600; color:var(--fg)}
+  figcaption span{color:var(--muted)}
+  footer{padding:48px 0 72px; color:var(--muted); font-size:14px}
+  footer p{margin:0 0 10px; max-width:70ch}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <!-- 想署真名时，把下面的 h1 换成姓名，@handle 留在 .handle 行即可 -->
+    <h1>参考视频驱动的短视频生成</h1>
+    <p class="handle">@fengyixuani</p>
+    <p class="lede">
+      我的方向是把一条已经验证过的短视频，拆成可复用的分镜结构，再用生成式方法重建成
+      一条结构对齐、可直接投放的新成片。下面是我在这条链路上负责的部分。
+    </p>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <h2>我负责的环节</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>参考片结构拆解</h3>
+        <p>把成片拆成分镜序列，标注每个镜头承担的功能、时长占比和衔接节奏，产出可复用的结构模板。</p>
+      </div>
+      <div class="card">
+        <h3>分镜级复刻</h3>
+        <p>逐镜重建画面内容与运镜方式，保证生成结果在镜头顺序、景别变化和节奏上与参考结构对齐。</p>
+      </div>
+      <div class="card">
+        <h3>商品表达镜头设计</h3>
+        <p>围绕手持、容积、细节、佩戴、切面、使用过程等常见商品展示需求，设计对应的镜头方案。</p>
+      </div>
+      <div class="card">
+        <h3>成片质检标准</h3>
+        <p>建立结构完整性、卖点覆盖度、转化节奏三条自查线，用来判断一条生成成片能不能直接用。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>覆盖过的品类</h2>
+    <ul class="tags">
+      <li>咖啡与冲调饮品</li>
+      <li>美妆个护</li>
+      <li>头发造型</li>
+      <li>运动鞋服</li>
+      <li>箱包</li>
+      <li>饰品与眼镜</li>
+      <li>数码配件</li>
+      <li>熟食与预制菜</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>案例</h2>
+    <div class="grid">
+      <!--
+        放素材的方法：把视频文件放进 media/，再把 .slot 整块换成
+        <video src="media/xxx.mp4" controls muted loop playsinline preload="metadata"></video>
+        只放你本人拥有版权、或已获授权可公开的素材。
+      -->
+      <figure>
+        <div class="slot">案例位 1 · 待放入成片</div>
+        <figcaption>
+          <b>冲调饮品 · 口播带货</b>
+          <span>反向切入 → 成分说明 → 冲泡演示 → 结尾促单</span>
+        </figcaption>
+      </figure>
+      <figure>
+        <div class="slot">案例位 2 · 待放入成片</div>
+        <figcaption>
+          <b>头发造型 · 痛点向</b>
+          <span>痛点唤起 → 操作演示 → 前后对比</span>
+        </figcaption>
+      </figure>
+      <figure>
+        <div class="slot">案例位 3 · 待放入成片</div>
+        <figcaption>
+          <b>箱包 · 纯商品展示</b>
+          <span>手持展示 → 容积展示 → 细节特写 → 场景放置</span>
+        </figcaption>
+      </figure>
+      <figure>
+        <div class="slot">案例位 4 · 待放入成片</div>
+        <figcaption>
+          <b>饰品眼镜 · 佩戴向</b>
+          <span>佩戴动作 → 近景细节 → 半身效果</span>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>
+      本页只展示我个人的工作方法与可公开成果，不包含任何雇主内部资料、客户上传素材，
+      以及第三方品牌享有版权的视频画面。
+    </p>
+    <p>如需了解具体项目细节，请通过邮件与我联系。</p>
+    <!-- 邮箱/简历链接想放就补在这里 -->
+  </div>
+</footer>
+</body>
+</html>
