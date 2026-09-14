@@ -45,6 +45,21 @@
   figcaption span{color:var(--muted)}
   footer{padding:48px 0 72px; color:var(--muted); font-size:14px}
   footer p{margin:0 0 10px; max-width:70ch}
+
+  .row{border-top:1px solid var(--line); padding:30px 0}
+  .row:first-of-type{border-top:0}
+  .rowtitle{display:flex; flex-wrap:wrap; gap:10px; align-items:baseline; margin:0 0 18px}
+  .rowtitle b{font-size:17px}
+  .rowtitle em{font-style:normal; color:var(--muted); font-size:14px}
+  .kind{border:1px solid var(--line); border-radius:999px; padding:3px 10px; font-size:12px; color:var(--muted)}
+  .vids{display:grid; gap:14px; grid-template-columns:repeat(auto-fit,minmax(190px,1fr))}
+  .vids figure video{aspect-ratio:9/16}
+  .shots{display:flex; gap:16px; overflow-x:auto; margin-top:18px; padding-bottom:10px}
+  .shot{flex:0 0 168px}
+  .shot .pair{display:grid; gap:5px}
+  .shot img{width:100%; display:block; border-radius:6px; border:1px solid var(--line); background:#000}
+  .shot p{margin:8px 0 0; font-size:13px; color:var(--muted); text-align:center}
+  .shot .who{font-size:11px; color:var(--muted); opacity:.7; margin:2px 0 0}
 </style>
 </head>
 <body>
@@ -86,117 +101,503 @@
 
 <section>
   <div class="wrap">
-    <h2>覆盖过的品类</h2>
-    <ul class="tags">
-      <li>咖啡与冲调饮品</li>
-      <li>美妆个护</li>
-      <li>头发造型</li>
-      <li>运动鞋服</li>
-      <li>箱包</li>
-      <li>饰品与眼镜</li>
-      <li>数码配件</li>
-      <li>熟食与预制菜</li>
-    </ul>
+    <h2>参考 → 复刻 对照</h2>
   </div>
-</section>
-
-<section>
   <div class="wrap">
-    <h2>口播带货成片</h2>
-    <div class="grid">
+  <div class="row">
+    <p class="rowtitle"><b>羽衣甘蓝</b><em class="kind">主播带货</em><em>反向营销 → 成分说明 → 冲兑展示 → 结尾促单</em></p>
+    <div class="vids">
+      <figure>
+        <video src="media/ref/%E7%BE%BD%E8%A1%A3%E7%94%98%E8%93%9D.mp4" controls muted loop playsinline preload="metadata"></video>
+        <figcaption>
+          <b>参考原片</b>
+          <span>被复刻的原始成片</span>
+        </figcaption>
+      </figure>
       <figure>
         <video src="media/%E9%BB%91%E5%B7%A7%E5%92%96%E5%95%A1%2Bbgm.mov" controls muted loop playsinline preload="metadata"></video>
         <figcaption>
-          <b>冲调饮品 · 黑巧咖啡</b>
-          <span>反向营销 → 成分说明 → 冲兑展示 → 结尾促单</span>
+          <b>复刻成片</b>
+          <span>复刻成片</span>
+        </figcaption>
+      </figure>
+    </div>
+    <div class="shots">
+      <div class="shot">
+        <div class="pair">
+          <img src="media/shots/1fdafa80c6a94cf98b4e6a64da8cdbcd.jpg" alt="反向营销分镜画面" loading="lazy">
+          <img src="media/shots/c5a294796fbb4c2bb65f9595418318a3.jpg" alt="反向营销分镜画面" loading="lazy">
+        </div>
+        <p>反向营销</p>
+        <p class="who">上：参考 · 下：复刻</p>
+      </div>
+      <div class="shot">
+        <div class="pair">
+          <img src="media/shots/dc31888b60ca4fb9b275a79bfd92757b.jpg" alt="成分说明分镜画面" loading="lazy">
+          <img src="media/shots/fe1d7650a55d4cfca7611045393a9248.jpg" alt="成分说明分镜画面" loading="lazy">
+        </div>
+        <p>成分说明</p>
+        <p class="who">上：参考 · 下：复刻</p>
+      </div>
+      <div class="shot">
+        <div class="pair">
+          <img src="media/shots/96b26051740c49cab242bbdd4b88cb14.jpg" alt="冲兑展示分镜画面" loading="lazy">
+          <img src="media/shots/c8727650dec340cc940cf58b8ea4c5aa.jpg" alt="冲兑展示分镜画面" loading="lazy">
+        </div>
+        <p>冲兑展示</p>
+        <p class="who">上：参考 · 下：复刻</p>
+      </div>
+      <div class="shot">
+        <div class="pair">
+          <img src="media/shots/b96546a1550a4a268e03d077873efc06.jpg" alt="结尾促单分镜画面" loading="lazy">
+          <img src="media/shots/b02b2944ef63446c9736951053a9a96e.jpg" alt="结尾促单分镜画面" loading="lazy">
+        </div>
+        <p>结尾促单</p>
+        <p class="who">上：参考 · 下：复刻</p>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <p class="rowtitle"><b>黑咖啡参考1</b><em class="kind">主播带货</em><em>食用展示 → 信任背书 → 成分介绍 → 结尾促销</em></p>
+    <div class="vids">
+      <figure>
+        <video src="media/ref/%E9%BB%91%E5%92%96%E5%95%A1%E5%8F%82%E8%80%831.mp4" controls muted loop playsinline preload="metadata"></video>
+        <figcaption>
+          <b>参考原片</b>
+          <span>被复刻的原始成片</span>
         </figcaption>
       </figure>
       <figure>
-        <video src="media/黑巧卡.mov" controls muted loop playsinline preload="metadata"></video>
+        <video src="media/%E9%BB%91%E5%B7%A7%E5%8D%A1.mov" controls muted loop playsinline preload="metadata"></video>
         <figcaption>
-          <b>冲调饮品 · 第二版结构</b>
-          <span>食用展示 → 信任背书 → 成分介绍 → 结尾促销</span>
+          <b>复刻成片</b>
+          <span>复刻成片</span>
+        </figcaption>
+      </figure>
+    </div>
+    <div class="shots">
+      <div class="shot">
+        <div class="pair">
+          <img src="media/shots/b8548d475c724fbab28bee9efbce272d.jpg" alt="食用展示分镜画面" loading="lazy">
+          <img src="media/shots/6f18eebe67a74f5cb08023ce7dad21b2.jpg" alt="食用展示分镜画面" loading="lazy">
+        </div>
+        <p>食用展示</p>
+        <p class="who">上：参考 · 下：复刻</p>
+      </div>
+      <div class="shot">
+        <div class="pair">
+          <img src="media/shots/4dd1fd0ff3eb4a5b8d8af26da9ff8111.jpg" alt="信任背书分镜画面" loading="lazy">
+          <img src="media/shots/b7a5374876524bb59883ed48e3b91786.jpg" alt="信任背书分镜画面" loading="lazy">
+        </div>
+        <p>信任背书</p>
+        <p class="who">上：参考 · 下：复刻</p>
+      </div>
+      <div class="shot">
+        <div class="pair">
+          <img src="media/shots/b018886c48cb4038997156ff685e9b39.jpg" alt="成分介绍分镜画面" loading="lazy">
+          <img src="media/shots/22fd7ef73a6a4242921e889b37d3eb91.jpg" alt="成分介绍分镜画面" loading="lazy">
+        </div>
+        <p>成分介绍</p>
+        <p class="who">上：参考 · 下：复刻</p>
+      </div>
+      <div class="shot">
+        <div class="pair">
+          <img src="media/shots/d2bfed84a9ff4caca2d2e7804d15da69.jpg" alt="结尾促销分镜画面" loading="lazy">
+          <img src="media/shots/688ba3bd589b4da28810ae2585a9157a.jpg" alt="结尾促销分镜画面" loading="lazy">
+        </div>
+        <p>结尾促销</p>
+        <p class="who">上：参考 · 下：复刻</p>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <p class="rowtitle"><b>理然泥膜棒</b><em class="kind">主播带货</em><em>焦虑制造 → 商品使用 → 原理介绍 → 结尾促单</em></p>
+    <div class="vids">
+      <figure>
+        <video src="media/ref/%E7%90%86%E7%84%B6%E6%B3%A5%E8%86%9C%E6%A3%92.mov" controls muted loop playsinline preload="metadata"></video>
+        <figcaption>
+          <b>参考原片</b>
+          <span>被复刻的原始成片</span>
         </figcaption>
       </figure>
       <figure>
-        <video src="media/美妆.mov" controls muted loop playsinline preload="metadata"></video>
+        <video src="media/%E7%BE%8E%E5%A6%86.mov" controls muted loop playsinline preload="metadata"></video>
         <figcaption>
-          <b>美妆个护 · 泥膜棒</b>
-          <span>焦虑制造 → 商品使用 → 原理介绍 → 结尾促单</span>
+          <b>复刻成片</b>
+          <span>复刻成片</span>
+        </figcaption>
+      </figure>
+    </div>
+    <div class="shots">
+      <div class="shot">
+        <div class="pair">
+          <img src="media/shots/3ccfb461b74441d4a297671c6aee72c5.jpg" alt="焦虑制造分镜画面" loading="lazy">
+          <img src="media/shots/8572f4fe42c0470e952ff2bb87d5c8cb.jpg" alt="焦虑制造分镜画面" loading="lazy">
+        </div>
+        <p>焦虑制造</p>
+        <p class="who">上：参考 · 下：复刻</p>
+      </div>
+      <div class="shot">
+        <div class="pair">
+          <img src="media/shots/c6f7e2ec8bdf4dfe806f81e132e3ae3c.jpg" alt="商品使用分镜画面" loading="lazy">
+          <img src="media/shots/0317e213f5bb424bbd3dfffcc5f60e41.jpg" alt="商品使用分镜画面" loading="lazy">
+        </div>
+        <p>商品使用</p>
+        <p class="who">上：参考 · 下：复刻</p>
+      </div>
+      <div class="shot">
+        <div class="pair">
+          <img src="media/shots/64e2e534c3c34cd9aca11c0799eb913e.jpg" alt="原理介绍分镜画面" loading="lazy">
+          <img src="media/shots/fc1dde4f6c8b4ddd95773a5f4d4e375e.jpg" alt="原理介绍分镜画面" loading="lazy">
+        </div>
+        <p>原理介绍</p>
+        <p class="who">上：参考 · 下：复刻</p>
+      </div>
+      <div class="shot">
+        <div class="pair">
+          <img src="media/shots/fbbd36c03ecb4d97beecfbf5c5ab2a6a.jpg" alt="结尾促单分镜画面" loading="lazy">
+          <img src="media/shots/d3ec8f6e5037470499389f4d72740976.jpg" alt="结尾促单分镜画面" loading="lazy">
+        </div>
+        <p>结尾促单</p>
+        <p class="who">上：参考 · 下：复刻</p>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <p class="rowtitle"><b>博士耳塞</b><em class="kind">主播带货</em><em>夸张体验 → 设计介绍 → 使用场景 → 痛点营销</em></p>
+    <div class="vids">
+      <figure>
+        <video src="media/ref/%E5%8D%9A%E5%A3%AB%E8%80%B3%E5%A1%9E.MP4" controls muted loop playsinline preload="metadata"></video>
+        <figcaption>
+          <b>参考原片</b>
+          <span>被复刻的原始成片</span>
         </figcaption>
       </figure>
       <figure>
-        <video src="media/耳塞无重点.mov" controls muted loop playsinline preload="metadata"></video>
+        <video src="media/%E8%80%B3%E5%A1%9E%E6%97%A0%E9%87%8D%E7%82%B9.mov" controls muted loop playsinline preload="metadata"></video>
         <figcaption>
-          <b>数码配件 · 降噪耳塞</b>
-          <span>夸张体验 → 设计介绍 → 使用场景 → 痛点营销</span>
+          <b>复刻成片</b>
+          <span>复刻成片</span>
+        </figcaption>
+      </figure>
+    </div>
+    <div class="shots">
+      <div class="shot">
+        <div class="pair">
+          <img src="media/shots/0430199918aa41b4a7d552e0532880ee.jpg" alt="夸张体验分镜画面" loading="lazy">
+          <img src="media/shots/7d1f40f8f95f4ebd964d97518ace6512.jpg" alt="夸张体验分镜画面" loading="lazy">
+        </div>
+        <p>夸张体验</p>
+        <p class="who">上：参考 · 下：复刻</p>
+      </div>
+      <div class="shot">
+        <div class="pair">
+          <img src="media/shots/23ec302b4c114517a8078bd560397739.jpg" alt="设计介绍分镜画面" loading="lazy">
+          <img src="media/shots/2d33ff4507874f409913f67485375603.jpg" alt="设计介绍分镜画面" loading="lazy">
+        </div>
+        <p>设计介绍</p>
+        <p class="who">上：参考 · 下：复刻</p>
+      </div>
+      <div class="shot">
+        <div class="pair">
+          <img src="media/shots/9d704a400aa34ffdbf535f487480edb8.jpg" alt="使用场景分镜画面" loading="lazy">
+          <img src="media/shots/f83248c97b9b4b6b9118d4318cf7d7ae.jpg" alt="使用场景分镜画面" loading="lazy">
+        </div>
+        <p>使用场景</p>
+        <p class="who">上：参考 · 下：复刻</p>
+      </div>
+      <div class="shot">
+        <div class="pair">
+          <img src="media/shots/07904c3edb014718b3995a19d258b7c3.jpg" alt="痛点营销分镜画面" loading="lazy">
+          <img src="media/shots/f281da6b5295445bba6f532cf571fe4e.jpg" alt="痛点营销分镜画面" loading="lazy">
+        </div>
+        <p>痛点营销</p>
+        <p class="who">上：参考 · 下：复刻</p>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <p class="rowtitle"><b>干发</b><em class="kind">主播带货</em><em>痛点营销 → 操作展示 → 操作展示</em></p>
+    <div class="vids">
+      <figure>
+        <video src="media/ref/%E5%B9%B2%E5%8F%91.mp4" controls muted loop playsinline preload="metadata"></video>
+        <figcaption>
+          <b>参考原片</b>
+          <span>被复刻的原始成片</span>
         </figcaption>
       </figure>
       <figure>
-        <video src="media/泡沫.mov" controls muted loop playsinline preload="metadata"></video>
+        <video src="media/%E6%B3%A1%E6%B2%AB.mov" controls muted loop playsinline preload="metadata"></video>
         <figcaption>
-          <b>头发造型 · 干发慕斯</b>
-          <span>痛点营销 → 操作展示</span>
+          <b>复刻成片</b>
+          <span>复刻成片</span>
+        </figcaption>
+      </figure>
+    </div>
+    <div class="shots">
+      <div class="shot">
+        <div class="pair">
+          <img src="media/shots/9fa58d225f7a4c0590a61cd88ed55dde.jpg" alt="痛点营销分镜画面" loading="lazy">
+          <img src="media/shots/74fe57ccbd87436e9f4773453317a02c.jpg" alt="痛点营销分镜画面" loading="lazy">
+        </div>
+        <p>痛点营销</p>
+        <p class="who">上：参考 · 下：复刻</p>
+      </div>
+      <div class="shot">
+        <div class="pair">
+          <img src="media/shots/b459feb4b1674e41ba2995cb7028c46f.jpg" alt="操作展示分镜画面" loading="lazy">
+          <img src="media/shots/a16016f8c53d4503be3a9accac2e61ac.jpg" alt="操作展示分镜画面" loading="lazy">
+        </div>
+        <p>操作展示</p>
+        <p class="who">上：参考 · 下：复刻</p>
+      </div>
+      <div class="shot">
+        <div class="pair">
+          <img src="media/shots/f1c1f3485929458884d7f883bb53c7cc.jpg" alt="操作展示分镜画面" loading="lazy">
+          <img src="media/shots/09967191fc1841789b8b2349082f64d8.jpg" alt="操作展示分镜画面" loading="lazy">
+        </div>
+        <p>操作展示</p>
+        <p class="who">上：参考 · 下：复刻</p>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <p class="rowtitle"><b>美津浓爆款复古跑鞋</b><em class="kind">商品展示</em></p>
+    <div class="vids">
+      <figure>
+        <video src="media/ref/%E7%BE%8E%E6%B4%A5%E6%B5%93%E7%88%86%E6%AC%BE%E5%A4%8D%E5%8F%A4%E8%B7%91%E9%9E%8B.mp4" controls muted loop playsinline preload="metadata"></video>
+        <figcaption>
+          <b>参考原片</b>
+          <span>被复刻的原始成片</span>
+        </figcaption>
+      </figure>
+      <figure>
+        <video src="media/%E9%9E%8B%E5%AD%90%E9%9D%9Eaigc.mp4" controls muted loop playsinline preload="metadata"></video>
+        <figcaption>
+          <b>复刻成片</b>
+          <span>非 AIGC，实拍对照</span>
         </figcaption>
       </figure>
     </div>
   </div>
-</section>
-
-<section>
-  <div class="wrap">
-    <h2>商品展示成片</h2>
-    <div class="grid">
+  <div class="row">
+    <p class="rowtitle"><b>饺子包</b><em class="kind">商品展示</em><em>手持展示 → 容积展示 → 放置展示 → 商品交互</em></p>
+    <div class="vids">
       <figure>
-        <video src="media/包包.mp4" controls muted loop playsinline preload="metadata"></video>
+        <video src="media/ref/%E9%A5%BA%E5%AD%90%E5%8C%85.mp4" controls muted loop playsinline preload="metadata"></video>
         <figcaption>
-          <b>箱包 · 手持向</b>
-          <span>手持展示 → 容积展示 → 放置展示 → 商品交互</span>
+          <b>参考原片</b>
+          <span>被复刻的原始成片</span>
+        </figcaption>
+      </figure>
+      <figure>
+        <video src="media/%E5%8C%85%E5%8C%85.mp4" controls muted loop playsinline preload="metadata"></video>
+        <figcaption>
+          <b>复刻 第 1 版</b>
+          <span>复刻成片 第 1 版</span>
         </figcaption>
       </figure>
       <figure>
         <video src="media/agentcut_20260731_112313_loop1.mp4" controls muted loop playsinline preload="metadata"></video>
         <figcaption>
-          <b>箱包 · 循环版</b>
-          <span>同一组素材的另一种分镜排布</span>
+          <b>复刻 第 2 版</b>
+          <span>复刻成片 第 2 版</span>
+        </figcaption>
+      </figure>
+    </div>
+    <div class="shots">
+      <div class="shot">
+        <div class="pair">
+          <img src="media/shots/c4599c673e824789b4cf65465ba11820.jpg" alt="手持展示分镜画面" loading="lazy">
+          <img src="media/shots/546942db278244f49864238d52a5938e.jpg" alt="手持展示分镜画面" loading="lazy">
+        </div>
+        <p>手持展示</p>
+        <p class="who">上：参考 · 下：复刻</p>
+      </div>
+      <div class="shot">
+        <div class="pair">
+          <img src="media/shots/ad93be29688647c28e0f8a2ad37ee7ad.jpg" alt="容积展示分镜画面" loading="lazy">
+          <img src="media/shots/a979fae8d58647959f0a3314d3f17ff1.jpg" alt="容积展示分镜画面" loading="lazy">
+        </div>
+        <p>容积展示</p>
+        <p class="who">上：参考 · 下：复刻</p>
+      </div>
+      <div class="shot">
+        <div class="pair">
+          <img src="media/shots/45b3cab91de742e4ae0235295aeb651d.jpg" alt="放置展示分镜画面" loading="lazy">
+          <img src="media/shots/4d22a386b5144686aab7eae0a66f88c7.jpg" alt="放置展示分镜画面" loading="lazy">
+        </div>
+        <p>放置展示</p>
+        <p class="who">上：参考 · 下：复刻</p>
+      </div>
+      <div class="shot">
+        <div class="pair">
+          <img src="media/shots/12a1a662955b43769e29c2d6dde03682.jpg" alt="商品交互分镜画面" loading="lazy">
+          <img src="media/shots/a01f1ee5bb6743e3a86ace25b298ae29.jpg" alt="商品交互分镜画面" loading="lazy">
+        </div>
+        <p>商品交互</p>
+        <p class="who">上：参考 · 下：复刻</p>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <p class="rowtitle"><b>xianglian</b><em class="kind">商品展示</em><em>佩戴展示 → 细节展示 → 佩戴展示</em></p>
+    <div class="vids">
+      <figure>
+        <video src="media/ref/xianglian.mp4" controls muted loop playsinline preload="metadata"></video>
+        <figcaption>
+          <b>参考原片</b>
+          <span>被复刻的原始成片</span>
         </figcaption>
       </figure>
       <figure>
         <video src="media/agentcut_20260731_175216_loop1.mp4" controls muted loop playsinline preload="metadata"></video>
         <figcaption>
-          <b>饰品 · 项链</b>
-          <span>佩戴展示 → 细节展示</span>
+          <b>复刻 第 1 版</b>
+          <span>复刻成片 第 1 版</span>
         </figcaption>
       </figure>
       <figure>
-        <video src="media/agentcut_20260803_183322_loop1_副本2.mp4" controls muted loop playsinline preload="metadata"></video>
+        <video src="media/agentcut_20260803_183322_loop1_%E5%89%AF%E6%9C%AC2.mp4" controls muted loop playsinline preload="metadata"></video>
         <figcaption>
-          <b>饰品 · 项链第二版</b>
-          <span>调整佩戴镜头时长后的版本</span>
+          <b>复刻 第 2 版</b>
+          <span>复刻成片 第 2 版</span>
+        </figcaption>
+      </figure>
+    </div>
+    <div class="shots">
+      <div class="shot">
+        <div class="pair">
+          <img src="media/shots/2549473d0a0d41a1ac479c981970d893.jpg" alt="佩戴展示分镜画面" loading="lazy">
+          <img src="media/shots/4e14032467004fd6b2463e50c31d0539.jpg" alt="佩戴展示分镜画面" loading="lazy">
+        </div>
+        <p>佩戴展示</p>
+        <p class="who">上：参考 · 下：复刻</p>
+      </div>
+      <div class="shot">
+        <div class="pair">
+          <img src="media/shots/395dcb8d9489453dab53bc253d2646dc.jpg" alt="细节展示分镜画面" loading="lazy">
+          <img src="media/shots/6db8088b6da643c292b1dc5c54fe3ebd.jpg" alt="细节展示分镜画面" loading="lazy">
+        </div>
+        <p>细节展示</p>
+        <p class="who">上：参考 · 下：复刻</p>
+      </div>
+      <div class="shot">
+        <div class="pair">
+          <img src="media/shots/2549473d0a0d41a1ac479c981970d893.jpg" alt="佩戴展示分镜画面" loading="lazy">
+          <img src="media/shots/31a86a50972e4604ad21f6221b8f9af0.jpg" alt="佩戴展示分镜画面" loading="lazy">
+          <img src="media/shots/d55654c176df479185bfd9eb22bfd131.jpg" alt="佩戴展示分镜画面" loading="lazy">
+        </div>
+        <p>佩戴展示</p>
+        <p class="who">3 帧</p>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <p class="rowtitle"><b>牛肉饼_Ref</b><em class="kind">商品展示</em><em>切面展示 → 制作过程 → 食欲营销 → 食材展示</em></p>
+    <div class="vids">
+      <figure>
+        <video src="media/ref/%E7%89%9B%E8%82%89%E9%A5%BC_Ref.mov" controls muted loop playsinline preload="metadata"></video>
+        <figcaption>
+          <b>参考原片</b>
+          <span>被复刻的原始成片</span>
         </figcaption>
       </figure>
       <figure>
-        <video src="media/agentcut_20260731_182532_loop1.mp4" controls muted loop playsinline preload="metadata"></video>
+        <video src="media/%E4%BF%AE%E6%94%B9%E5%90%8E.mp4" controls muted loop playsinline preload="metadata"></video>
         <figcaption>
-          <b>眼镜 · 猫眼墨镜</b>
-          <span>佩戴动作 → 近景展示 → 半身展示</span>
-        </figcaption>
-      </figure>
-      <figure>
-        <video src="media/修改后.mp4" controls muted loop playsinline preload="metadata"></video>
-        <figcaption>
-          <b>熟食 · 牛肉饼</b>
-          <span>切面展示 → 制作过程 → 食欲营销 → 食材展示</span>
+          <b>复刻 第 1 版</b>
+          <span>复刻成片 第 1 版</span>
         </figcaption>
       </figure>
       <figure>
         <video src="media/agentcut_20260731_175830_loop1.mp4" controls muted loop playsinline preload="metadata"></video>
         <figcaption>
-          <b>熟食 · 牛肉饼循环版</b>
-          <span>压缩前段、加重食欲镜头的版本</span>
+          <b>复刻 第 2 版</b>
+          <span>复刻成片 第 2 版</span>
         </figcaption>
       </figure>
     </div>
+    <div class="shots">
+      <div class="shot">
+        <div class="pair">
+          <img src="media/shots/521f9719b34249da882c171957e70ec4.jpg" alt="切面展示分镜画面" loading="lazy">
+          <img src="media/shots/b33cf911634648a99d35f90a54779e21.jpg" alt="切面展示分镜画面" loading="lazy">
+        </div>
+        <p>切面展示</p>
+        <p class="who">上：参考 · 下：复刻</p>
+      </div>
+      <div class="shot">
+        <div class="pair">
+          <img src="media/shots/183e6745491645f59d5fecaebe2de443.jpg" alt="制作过程分镜画面" loading="lazy">
+          <img src="media/shots/f2a0ced3dfda4a10ac1646cb12df3c94.jpg" alt="制作过程分镜画面" loading="lazy">
+        </div>
+        <p>制作过程</p>
+        <p class="who">上：参考 · 下：复刻</p>
+      </div>
+      <div class="shot">
+        <div class="pair">
+          <img src="media/shots/8407b9f626794e6291acd5c4ef75a60e.jpg" alt="食欲营销分镜画面" loading="lazy">
+          <img src="media/shots/d627b74d6a1d47ada9b32bd6d5fdedf2.jpg" alt="食欲营销分镜画面" loading="lazy">
+        </div>
+        <p>食欲营销</p>
+        <p class="who">上：参考 · 下：复刻</p>
+      </div>
+      <div class="shot">
+        <div class="pair">
+          <img src="media/shots/ccc5d235539348dfb1892984e0240440.jpg" alt="食材展示分镜画面" loading="lazy">
+          <img src="media/shots/f28fa300fd6249a698bd7ae297e83780.jpg" alt="食材展示分镜画面" loading="lazy">
+        </div>
+        <p>食材展示</p>
+        <p class="who">上：参考 · 下：复刻</p>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <p class="rowtitle"><b>眼睛</b><em class="kind">商品展示</em><em>佩戴动作 → 近景展示 → 半身展示</em></p>
+    <div class="vids">
+      <figure>
+        <video src="media/ref/%E7%9C%BC%E7%9D%9B.mp4" controls muted loop playsinline preload="metadata"></video>
+        <figcaption>
+          <b>参考原片</b>
+          <span>被复刻的原始成片</span>
+        </figcaption>
+      </figure>
+      <figure>
+        <video src="media/agentcut_20260731_182532_loop1.mp4" controls muted loop playsinline preload="metadata"></video>
+        <figcaption>
+          <b>复刻成片</b>
+          <span>复刻成片</span>
+        </figcaption>
+      </figure>
+    </div>
+    <div class="shots">
+      <div class="shot">
+        <div class="pair">
+          <img src="media/shots/0fe273cb90344432bf4e21e5dd00c3ef.jpg" alt="佩戴动作分镜画面" loading="lazy">
+          <img src="media/shots/ce4b682610c3406cbb15488c98c85d3d.jpg" alt="佩戴动作分镜画面" loading="lazy">
+        </div>
+        <p>佩戴动作</p>
+        <p class="who">上：参考 · 下：复刻</p>
+      </div>
+      <div class="shot">
+        <div class="pair">
+          <img src="media/shots/94c1a2b133e1411ea545f871c368c5f7.jpg" alt="近景展示分镜画面" loading="lazy">
+          <img src="media/shots/00446e9f458f471ea6bdc219b2ac75c9.jpg" alt="近景展示分镜画面" loading="lazy">
+        </div>
+        <p>近景展示</p>
+        <p class="who">上：参考 · 下：复刻</p>
+      </div>
+      <div class="shot">
+        <div class="pair">
+          <img src="media/shots/8582f02f208046e68b11485d902a8dce.jpg" alt="半身展示分镜画面" loading="lazy">
+          <img src="media/shots/c35d19b8f824416989afdd91d621e5f1.jpg" alt="半身展示分镜画面" loading="lazy">
+        </div>
+        <p>半身展示</p>
+        <p class="who">上：参考 · 下：复刻</p>
+      </div>
+    </div>
+  </div>
   </div>
 </section>
 
