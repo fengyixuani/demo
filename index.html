@@ -7,84 +7,132 @@
 <meta name="description" content="参考视频驱动的短视频生成与分镜复刻作品集。">
 <style>
   :root{
-    --bg:#0d0f13; --panel:#151922; --line:#242b38;
-    --fg:#e8ecf3; --muted:#9aa5b8; --accent:#6ea8fe;
+    --bg:#0b0d11; --panel:#14181f; --panel2:#1a1f28; --line:#232935;
+    --fg:#eef2f8; --muted:#98a3b6; --accent:#6ea8fe;
+    --nav:60px;
   }
   *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
   body{
     margin:0; background:var(--bg); color:var(--fg);
     font:16px/1.7 -apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    -webkit-font-smoothing:antialiased;
   }
-  a{color:var(--accent)}
+  a{color:var(--accent); text-decoration:none}
   a:focus-visible,button:focus-visible{outline:2px solid var(--accent); outline-offset:3px}
-  .wrap{max-width:960px; margin:0 auto; padding:0 24px}
-  header{padding:80px 0 48px; border-bottom:1px solid var(--line)}
-  h1{margin:0 0 12px; font-size:clamp(28px,5vw,42px); line-height:1.25; letter-spacing:-.02em}
-  .handle{margin:0; color:var(--muted); font-size:15px}
-  .lede{margin:24px 0 0; max-width:60ch; color:var(--muted); font-size:17px}
-  section{padding:56px 0; border-bottom:1px solid var(--line)}
-  h2{margin:0 0 28px; font-size:13px; font-weight:600; letter-spacing:.12em; text-transform:uppercase; color:var(--muted)}
+  .wrap{max-width:1080px; margin:0 auto; padding:0 24px}
+
+  header{padding:96px 0 56px}
+  h1{margin:0 0 14px; font-size:clamp(30px,5vw,46px); line-height:1.2; letter-spacing:-.02em}
+  .handle{margin:0; color:var(--muted); font-size:15px; font-variant-numeric:tabular-nums}
+  .lede{margin:22px 0 0; max-width:62ch; color:var(--muted); font-size:17px}
+
+  .topnav{
+    position:sticky; top:0; z-index:20; height:var(--nav);
+    display:flex; align-items:center;
+    background:rgba(11,13,17,.82); backdrop-filter:blur(12px);
+    border-top:1px solid var(--line); border-bottom:1px solid var(--line);
+  }
+  .topnav .wrap{display:flex; gap:8px; overflow-x:auto; scrollbar-width:none}
+  .topnav .wrap::-webkit-scrollbar{display:none}
+  .topnav a{
+    flex:0 0 auto; padding:6px 13px; border-radius:999px; font-size:14px;
+    color:var(--muted); border:1px solid transparent; white-space:nowrap;
+  }
+  .topnav a:hover{color:var(--fg); background:var(--panel); border-color:var(--line)}
+
+  section{padding:64px 0; border-bottom:1px solid var(--line); scroll-margin-top:var(--nav)}
+  section:last-of-type{border-bottom:0}
+  h2{
+    margin:0 0 8px; font-size:clamp(21px,2.4vw,27px); font-weight:650;
+    letter-spacing:-.01em; color:var(--fg);
+  }
+  h2+.lede{margin-top:6px; margin-bottom:26px}
   h3{margin:0 0 8px; font-size:17px}
-  .grid{display:grid; gap:16px; grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
-  .card{background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:22px}
+
+  .grid{display:grid; gap:16px; grid-template-columns:repeat(auto-fit,minmax(min(250px,100%),1fr))}
+  .card{background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:22px}
   .card p{margin:0; color:var(--muted); font-size:15px}
-  ul.tags{display:flex; flex-wrap:wrap; gap:10px; margin:0; padding:0; list-style:none}
+  ul.tags{display:flex; flex-wrap:wrap; gap:9px; margin:0; padding:0; list-style:none}
   ul.tags li{
-    border:1px solid var(--line); border-radius:999px;
-    padding:6px 14px; font-size:14px; color:var(--muted); background:var(--panel);
+    border:1px solid var(--line); border-radius:999px; background:var(--panel);
+    padding:6px 14px; font-size:14px; color:var(--muted);
   }
-  figure{margin:0; background:var(--panel); border:1px solid var(--line); border-radius:12px; overflow:hidden}
-  figure video{display:block; width:100%; aspect-ratio:9/16; background:#000; object-fit:contain}
-  .slot{
-    display:flex; align-items:center; justify-content:center; text-align:center;
-    aspect-ratio:9/16; padding:20px; color:var(--muted); font-size:14px;
-    border-bottom:1px solid var(--line);
+
+  /* 每组一张卡，29 组不再糊成一片 */
+  .row{
+    background:var(--panel); border:1px solid var(--line); border-radius:16px;
+    padding:22px; margin-bottom:16px;
   }
-  figcaption{padding:14px 18px; font-size:14px}
+  .row:last-child{margin-bottom:0}
+  .rowtitle{display:block; margin:0 0 16px}
+  .rowtitle b{display:block; font-size:18px; letter-spacing:-.01em}
+  .rowtitle em{
+    display:block; margin-top:5px; font-style:normal;
+    color:var(--muted); font-size:13.5px; line-height:1.6;
+  }
+
+  figure{margin:0; background:var(--panel2); border:1px solid var(--line); border-radius:12px; overflow:hidden}
+  figcaption{padding:12px 15px; font-size:13.5px}
   figcaption b{display:block; font-weight:600; color:var(--fg)}
   figcaption span{color:var(--muted)}
-  footer{padding:48px 0 72px; color:var(--muted); font-size:14px}
-  footer p{margin:0 0 10px; max-width:70ch}
 
-  .row{border-top:1px solid var(--line); padding:30px 0}
-  .row:first-of-type{border-top:0}
-  .rowtitle{display:flex; flex-wrap:wrap; gap:10px; align-items:baseline; margin:0 0 18px}
-  .rowtitle b{font-size:17px}
-  .rowtitle em{font-style:normal; color:var(--muted); font-size:14px}
-  .kind{border:1px solid var(--line); border-radius:999px; padding:3px 10px; font-size:12px; color:var(--muted)}
-  .vids{display:grid; gap:14px; grid-template-columns:repeat(auto-fit,minmax(190px,1fr))}
-  .vids figure video{aspect-ratio:9/16}
-  .shots{display:flex; gap:16px; overflow-x:auto; margin-top:18px; padding-bottom:10px}
-  .shot{flex:0 0 168px}
-  .shot .pair{display:grid; gap:5px}
-  .shot img{width:100%; display:block; border-radius:6px; border:1px solid var(--line); background:#000}
-  .shot p{margin:8px 0 0; font-size:13px; color:var(--muted); text-align:center}
-  .shot .who{font-size:11px; color:var(--muted); opacity:.7; margin:2px 0 0}
+  .vids{display:grid; gap:14px; grid-template-columns:repeat(auto-fit,minmax(min(210px,100%),1fr))}
   figure.goods .stack{display:grid; gap:4px; background:#000}
   figure.goods img{display:block; width:100%; aspect-ratio:9/16; object-fit:contain; background:#000}
   figure.goods .stack.two img{aspect-ratio:9/8}
+
+  /* 分镜序列：横向滚动，右侧渐隐提示还有内容 */
+  .shots{
+    display:flex; gap:14px; overflow-x:auto; margin-top:18px; padding-bottom:12px;
+    mask-image:linear-gradient(to right,#000 0,#000 calc(100% - 44px),transparent 100%);
+    -webkit-mask-image:linear-gradient(to right,#000 0,#000 calc(100% - 44px),transparent 100%);
+  }
+  .shots:hover{mask-image:none; -webkit-mask-image:none}
+  .shot{flex:0 0 150px}
+  .shot .pair{display:grid; gap:4px}
+  .shot img{width:100%; display:block; border-radius:6px; border:1px solid var(--line); background:#000}
+  .shot p{margin:8px 0 0; font-size:13px; color:var(--muted); text-align:center}
+  .shot .who{font-size:11px; opacity:.65; margin:2px 0 0}
+
   .play{
     display:block; width:100%; padding:0; border:0; line-height:0;
     background:#000; cursor:pointer; position:relative;
   }
   .play img{display:block; width:100%; aspect-ratio:9/16; object-fit:contain; background:#000}
   .play::after{
-    content:""; position:absolute; left:50%; top:50%; width:52px; height:52px;
+    content:""; position:absolute; left:50%; top:50%; width:50px; height:50px;
     transform:translate(-50%,-50%); border-radius:50%;
-    background:rgba(0,0,0,.5); border:1px solid rgba(255,255,255,.45);
+    background:rgba(0,0,0,.46); border:1px solid rgba(255,255,255,.42);
+    transition:background .15s;
   }
   .play::before{
     content:""; position:absolute; left:50%; top:50%; z-index:1;
-    transform:translate(-35%,-50%);
-    border-left:15px solid #fff; border-top:9px solid transparent; border-bottom:9px solid transparent;
+    transform:translate(-32%,-50%);
+    border-left:14px solid #fff; border-top:9px solid transparent; border-bottom:9px solid transparent;
   }
-  .play:hover::after{background:rgba(0,0,0,.72)}
+  .play:hover::after{background:rgba(0,0,0,.7)}
   .play:focus-visible{outline:2px solid var(--accent); outline-offset:3px}
-  .widegrid{display:grid; gap:16px; grid-template-columns:repeat(auto-fit,minmax(380px,1fr))}
+
+  .widegrid{display:grid; gap:16px; grid-template-columns:repeat(auto-fit,minmax(min(400px,100%),1fr))}
   .uishots{display:grid; gap:16px}
   figure.wide video,figure.wide>img{display:block; width:100%; height:auto; background:#000}
   .play.wide img{aspect-ratio:auto; height:auto; object-fit:contain}
   figure.wide figcaption b{display:inline; margin-right:10px}
+
+  footer{padding:56px 0 88px; color:var(--muted); font-size:14px}
+  footer p{margin:0 0 10px; max-width:72ch}
+
+  @media (max-width:640px){
+    header{padding:56px 0 36px}
+    section{padding:44px 0}
+    .row{padding:16px; border-radius:14px}
+    .shot{flex:0 0 128px}
+  }
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    .play::after{transition:none}
+  }
 </style>
 </head>
 <body>
@@ -100,7 +148,19 @@
   </div>
 </header>
 
-<section>
+<nav class="topnav" aria-label="小节导航">
+  <div class="wrap">
+    <a href="#host">主播带货</a>
+    <a href="#product">商品展示</a>
+    <a href="#drama">短剧带货</a>
+    <a href="#leadgen">产品引流</a>
+    <a href="#liveclip">直播切片</a>
+    <a href="#swap">人物替换 / 动作迁移</a>
+    <a href="#ui">产品界面</a>
+  </div>
+</nav>
+
+<section id="about">
   <div class="wrap">
     <h2>我负责的环节</h2>
     <div class="grid">
@@ -124,7 +184,7 @@
   </div>
 </section>
 
-<section>
+<section id="categories">
   <div class="wrap">
     <h2>覆盖过的品类</h2>
     <ul class="tags">
@@ -142,7 +202,7 @@
   </div>
 </section>
 
-<section>
+<section id="host">
   <div class="wrap">
     <h2>主播带货</h2>
     <p class="lede">口播带货：真人出镜讲卖点，按参考片的分镜功能逐镜复刻</p>
@@ -427,7 +487,7 @@
   </div>
   </div>
 </section>
-<section>
+<section id="product">
   <div class="wrap">
     <h2>商品展示</h2>
     <p class="lede">纯商品展示：无口播，靠手持、容积、细节、佩戴等镜头组织节奏</p>
@@ -698,7 +758,7 @@
   </div>
   </div>
 </section>
-<section>
+<section id="drama">
   <div class="wrap">
     <h2>短剧带货</h2>
     <p class="lede">短剧带货：冲突制造 → 剧情反转 → 反转入广的剧情结构</p>
@@ -1166,7 +1226,7 @@
   </div>
   </div>
 </section>
-<section>
+<section id="leadgen">
   <div class="wrap">
     <h2>产品引流</h2>
     <p class="lede">产品引流：痛点引入 → 产品演示 → 行动号召</p>
@@ -1417,7 +1477,7 @@
   </div>
   </div>
 </section>
-<section>
+<section id="liveclip">
   <div class="wrap">
     <h2>直播切片</h2>
     <p class="lede">直播切片：把长直播拆成可独立投放的转化短片</p>
@@ -1680,7 +1740,7 @@
   </div>
 </section>
 
-<section>
+<section id="swap">
   <div class="wrap">
     <h2>人物替换 / 动作迁移</h2>
     <p class="lede">保留参考片的动作与运镜，替换其中的人物或服装。每条都是左右对照，左侧参考、右侧生成。</p>
@@ -1713,7 +1773,7 @@
   </div>
 </section>
 
-<section>
+<section id="ui">
   <div class="wrap">
     <h2>产品界面</h2>
     <div class="uishots">
