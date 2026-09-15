@@ -80,6 +80,11 @@
   }
   .play:hover::after{background:rgba(0,0,0,.72)}
   .play:focus-visible{outline:2px solid var(--accent); outline-offset:3px}
+  .widegrid{display:grid; gap:16px; grid-template-columns:repeat(auto-fit,minmax(380px,1fr))}
+  .uishots{display:grid; gap:16px}
+  figure.wide video,figure.wide>img{display:block; width:100%; height:auto; background:#000}
+  .play.wide img{aspect-ratio:auto; height:auto; object-fit:contain}
+  figure.wide figcaption b{display:inline; margin-right:10px}
 </style>
 </head>
 <body>
@@ -1675,11 +1680,64 @@
   </div>
 </section>
 
+<section>
+  <div class="wrap">
+    <h2>人物替换 / 动作迁移</h2>
+    <p class="lede">保留参考片的动作与运镜，替换其中的人物或服装。每条都是左右对照，左侧参考、右侧生成。</p>
+    <div class="widegrid">
+      <figure class="wide">
+        <button class="play wide" type="button" data-src="media/swap/compare%20(4).mp4" aria-label="播放该片段">
+          <img src="media/posters/swap/compare%20(4).jpg" alt="" loading="lazy" decoding="async" style="aspect-ratio:778/720">
+        </button>
+        <figcaption><b>热门舞蹈</b><span>左：参考视频　右：单人物替换</span></figcaption>
+      </figure>
+      <figure class="wide">
+        <button class="play wide" type="button" data-src="media/swap/cmp_7dc65f20a8e07e55.mp4" aria-label="播放该片段">
+          <img src="media/posters/swap/cmp_7dc65f20a8e07e55.jpg" alt="" loading="lazy" decoding="async" style="aspect-ratio:814/720">
+        </button>
+        <figcaption><b>卡点变装广告</b><span>左：参考视频　右：多服装卡点替换</span></figcaption>
+      </figure>
+      <figure class="wide">
+        <button class="play wide" type="button" data-src="media/swap/compare%20(5).mp4" aria-label="播放该片段">
+          <img src="media/posters/swap/compare%20(5).jpg" alt="" loading="lazy" decoding="async" style="aspect-ratio:1920/480">
+        </button>
+        <figcaption><b>热门 MV</b><span>左：参考视频　右：单人物替换</span></figcaption>
+      </figure>
+      <figure class="wide">
+        <button class="play wide" type="button" data-src="media/swap/compare%20(6).mp4" aria-label="播放该片段">
+          <img src="media/posters/swap/compare%20(6).jpg" alt="" loading="lazy" decoding="async" style="aspect-ratio:1920/542">
+        </button>
+        <figcaption><b>热门影视片段</b><span>左：参考视频　右：双角色替换并保留背景</span></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>产品界面</h2>
+    <div class="uishots">
+      <figure class="wide">
+        <img src="media/ui/94519074f38d4100a3f48407200d5121.png" alt="产品主界面" loading="lazy" decoding="async" style="aspect-ratio:1599/870">
+        <figcaption><b>主界面</b></figcaption>
+      </figure>
+      <figure class="wide">
+        <img src="media/ui/53bd3c64a77f498d80441db132e988ea.png" alt="爆点拆解 tab" loading="lazy" decoding="async" style="aspect-ratio:1289/691">
+        <figcaption><b>爆点拆解 tab</b></figcaption>
+      </figure>
+      <figure class="wide">
+        <img src="media/ui/21c4f10dbbc14502babecfa792557b78.png" alt="素材库" loading="lazy" decoding="async" style="aspect-ratio:1062/836">
+        <figcaption><b>素材库</b></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
 <footer>
   <div class="wrap">
     <p>
       本页展示的是一条完整业务链路的成果，覆盖口播带货、纯商品展示、短剧带货、产品引流
-      与直播切片五个方向。
+      与直播切片五个方向，另有人物替换/动作迁移能力与产品界面。
     </p>
     <p>页面不包含客户上传的原始拍摄素材。片中所用素材均已获得授权。</p>
     <p>如需了解具体项目细节，请通过邮件与我联系。</p>
@@ -1688,7 +1746,7 @@
 </footer>
 <script>
 // 滚到视口附近就自动建 video 并开始下载、静音自动播；离开视口暂停以省 CPU。
-// 不在首屏一次性拉全部 624 MB，避免整页卡死。
+// 不在首屏一次性拉全部视频，避免整页卡死。
 (function () {
   function build(b) {
     if (!b || !b.parentNode) return null;
