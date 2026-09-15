@@ -86,16 +86,16 @@
   figure.goods .stack{display:grid; gap:4px; background:#000}
   figure.goods img{display:block; width:100%; height:auto; object-fit:contain; background:#000}
 
-  /* 分镜序列：横向滚动，右侧渐隐提示还有内容 */
+  /* 分镜序列：平铺换行，每张缩略图统一尺寸 */
   .shots{
-    display:flex; gap:14px; overflow-x:auto; margin-top:18px; padding-bottom:12px;
-    mask-image:linear-gradient(to right,#000 0,#000 calc(100% - 44px),transparent 100%);
-    -webkit-mask-image:linear-gradient(to right,#000 0,#000 calc(100% - 44px),transparent 100%);
+    display:grid; gap:14px 12px; margin-top:18px; align-items:start;
+    grid-template-columns:repeat(auto-fill,minmax(min(132px,100%),1fr));
   }
-  .shots:hover{mask-image:none; -webkit-mask-image:none}
-  .shot{flex:0 0 150px}
   .shot .pair{display:grid; gap:4px}
-  .shot img{width:100%; display:block; border-radius:6px; border:1px solid var(--line); background:#000}
+  .shot img{
+    display:block; width:100%; aspect-ratio:9/16; object-fit:cover; object-position:center;
+    border-radius:6px; border:1px solid var(--line); background:#000;
+  }
   .shot p{margin:8px 0 0; font-size:13px; color:var(--muted); text-align:center}
   .shot .who{font-size:11px; opacity:.65; margin:2px 0 0}
 
@@ -143,7 +143,7 @@
     header{padding:56px 0 36px}
     section{padding:44px 0}
     .row{padding:16px; border-radius:14px}
-    .shot{flex:0 0 128px}
+    .shots{grid-template-columns:repeat(auto-fill,minmax(min(104px,100%),1fr)); gap:10px 8px}
   }
   @media (prefers-reduced-motion:reduce){
     html{scroll-behavior:auto}
@@ -784,7 +784,7 @@
     <p class="rowtitle"><b>饮料</b><em>冲突制造 → 剧情反转 → 产品介绍</em></p>
     <div class="vids">
       <figure class="goods">
-        <div class="stack two">
+        <div class="stack">
           <img src="media/shots/b25742485b8f40dfbd9631275b5968c2.jpg" alt="商品" loading="lazy" style="aspect-ratio:402/720">
           <img src="media/shots/871ae2b016eb4049b9407fd4c24c3d35.jpg" alt="商品" loading="lazy" style="aspect-ratio:366/720">
         </div>
