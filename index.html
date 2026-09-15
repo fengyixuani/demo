@@ -86,12 +86,11 @@
   figure.goods .stack{display:grid; gap:4px; background:#000}
   figure.goods img{display:block; width:100%; height:auto; object-fit:contain; background:#000}
 
-  /* 分镜序列：平铺换行，每张缩略图统一尺寸 */
-  .shots{
-    display:grid; gap:14px 12px; margin-top:18px; align-items:start;
-    grid-template-columns:repeat(auto-fill,minmax(min(132px,100%),1fr));
-  }
-  .shot .pair{display:grid; gap:4px}
+  /* 分镜序列：整条铺满行宽，与上方视频栅格左右对齐，右侧不留空 */
+  .shots{display:flex; gap:12px; margin-top:18px; align-items:start}
+  .shot{flex:1 1 0; min-width:0}
+  /* 一格内参考与复刻左右并列，横向排开而不是往下堆高 */
+  .shot .pair{display:grid; grid-auto-flow:column; grid-auto-columns:1fr; gap:4px}
   .shot img{
     display:block; width:100%; aspect-ratio:9/16; object-fit:cover; object-position:center;
     border-radius:6px; border:1px solid var(--line); background:#000;
@@ -143,7 +142,9 @@
     header{padding:56px 0 36px}
     section{padding:44px 0}
     .row{padding:16px; border-radius:14px}
-    .shots{grid-template-columns:repeat(auto-fill,minmax(min(104px,100%),1fr)); gap:10px 8px}
+    /* 窄屏一行放不下 3~4 格，允许换行但仍撑满行宽 */
+    .shots{flex-wrap:wrap; gap:10px}
+    .shot{flex:1 1 132px}
   }
   @media (prefers-reduced-motion:reduce){
     html{scroll-behavior:auto}
@@ -253,7 +254,7 @@
           <img src="media/shots/c5a294796fbb4c2bb65f9595418318a3.jpg" alt="反向营销画面" loading="lazy">
         </div>
         <p>反向营销</p>
-        <p class="who">上：参考 · 下：复刻</p>
+        <p class="who">左：参考 · 右：复刻</p>
       </div>
       <div class="shot">
         <div class="pair">
@@ -261,7 +262,7 @@
           <img src="media/shots/fe1d7650a55d4cfca7611045393a9248.jpg" alt="成分说明画面" loading="lazy">
         </div>
         <p>成分说明</p>
-        <p class="who">上：参考 · 下：复刻</p>
+        <p class="who">左：参考 · 右：复刻</p>
       </div>
       <div class="shot">
         <div class="pair">
@@ -269,7 +270,7 @@
           <img src="media/shots/c8727650dec340cc940cf58b8ea4c5aa.jpg" alt="冲兑展示画面" loading="lazy">
         </div>
         <p>冲兑展示</p>
-        <p class="who">上：参考 · 下：复刻</p>
+        <p class="who">左：参考 · 右：复刻</p>
       </div>
       <div class="shot">
         <div class="pair">
@@ -277,7 +278,7 @@
           <img src="media/shots/b02b2944ef63446c9736951053a9a96e.jpg" alt="结尾促单画面" loading="lazy">
         </div>
         <p>结尾促单</p>
-        <p class="who">上：参考 · 下：复刻</p>
+        <p class="who">左：参考 · 右：复刻</p>
       </div>
     </div>
   </div>
@@ -310,7 +311,7 @@
           <img src="media/shots/6f18eebe67a74f5cb08023ce7dad21b2.jpg" alt="食用展示画面" loading="lazy">
         </div>
         <p>食用展示</p>
-        <p class="who">上：参考 · 下：复刻</p>
+        <p class="who">左：参考 · 右：复刻</p>
       </div>
       <div class="shot">
         <div class="pair">
@@ -318,7 +319,7 @@
           <img src="media/shots/b7a5374876524bb59883ed48e3b91786.jpg" alt="信任背书画面" loading="lazy">
         </div>
         <p>信任背书</p>
-        <p class="who">上：参考 · 下：复刻</p>
+        <p class="who">左：参考 · 右：复刻</p>
       </div>
       <div class="shot">
         <div class="pair">
@@ -326,7 +327,7 @@
           <img src="media/shots/22fd7ef73a6a4242921e889b37d3eb91.jpg" alt="成分介绍画面" loading="lazy">
         </div>
         <p>成分介绍</p>
-        <p class="who">上：参考 · 下：复刻</p>
+        <p class="who">左：参考 · 右：复刻</p>
       </div>
       <div class="shot">
         <div class="pair">
@@ -334,7 +335,7 @@
           <img src="media/shots/688ba3bd589b4da28810ae2585a9157a.jpg" alt="结尾促销画面" loading="lazy">
         </div>
         <p>结尾促销</p>
-        <p class="who">上：参考 · 下：复刻</p>
+        <p class="who">左：参考 · 右：复刻</p>
       </div>
     </div>
   </div>
@@ -367,7 +368,7 @@
           <img src="media/shots/8572f4fe42c0470e952ff2bb87d5c8cb.jpg" alt="焦虑制造画面" loading="lazy">
         </div>
         <p>焦虑制造</p>
-        <p class="who">上：参考 · 下：复刻</p>
+        <p class="who">左：参考 · 右：复刻</p>
       </div>
       <div class="shot">
         <div class="pair">
@@ -375,7 +376,7 @@
           <img src="media/shots/0317e213f5bb424bbd3dfffcc5f60e41.jpg" alt="商品使用画面" loading="lazy">
         </div>
         <p>商品使用</p>
-        <p class="who">上：参考 · 下：复刻</p>
+        <p class="who">左：参考 · 右：复刻</p>
       </div>
       <div class="shot">
         <div class="pair">
@@ -383,7 +384,7 @@
           <img src="media/shots/fc1dde4f6c8b4ddd95773a5f4d4e375e.jpg" alt="原理介绍画面" loading="lazy">
         </div>
         <p>原理介绍</p>
-        <p class="who">上：参考 · 下：复刻</p>
+        <p class="who">左：参考 · 右：复刻</p>
       </div>
       <div class="shot">
         <div class="pair">
@@ -391,7 +392,7 @@
           <img src="media/shots/d3ec8f6e5037470499389f4d72740976.jpg" alt="结尾促单画面" loading="lazy">
         </div>
         <p>结尾促单</p>
-        <p class="who">上：参考 · 下：复刻</p>
+        <p class="who">左：参考 · 右：复刻</p>
       </div>
     </div>
   </div>
@@ -424,7 +425,7 @@
           <img src="media/shots/7d1f40f8f95f4ebd964d97518ace6512.jpg" alt="夸张体验画面" loading="lazy">
         </div>
         <p>夸张体验</p>
-        <p class="who">上：参考 · 下：复刻</p>
+        <p class="who">左：参考 · 右：复刻</p>
       </div>
       <div class="shot">
         <div class="pair">
@@ -432,7 +433,7 @@
           <img src="media/shots/2d33ff4507874f409913f67485375603.jpg" alt="设计介绍画面" loading="lazy">
         </div>
         <p>设计介绍</p>
-        <p class="who">上：参考 · 下：复刻</p>
+        <p class="who">左：参考 · 右：复刻</p>
       </div>
       <div class="shot">
         <div class="pair">
@@ -440,7 +441,7 @@
           <img src="media/shots/f83248c97b9b4b6b9118d4318cf7d7ae.jpg" alt="使用场景画面" loading="lazy">
         </div>
         <p>使用场景</p>
-        <p class="who">上：参考 · 下：复刻</p>
+        <p class="who">左：参考 · 右：复刻</p>
       </div>
       <div class="shot">
         <div class="pair">
@@ -448,7 +449,7 @@
           <img src="media/shots/f281da6b5295445bba6f532cf571fe4e.jpg" alt="痛点营销画面" loading="lazy">
         </div>
         <p>痛点营销</p>
-        <p class="who">上：参考 · 下：复刻</p>
+        <p class="who">左：参考 · 右：复刻</p>
       </div>
     </div>
   </div>
@@ -481,7 +482,7 @@
           <img src="media/shots/74fe57ccbd87436e9f4773453317a02c.jpg" alt="痛点营销画面" loading="lazy">
         </div>
         <p>痛点营销</p>
-        <p class="who">上：参考 · 下：复刻</p>
+        <p class="who">左：参考 · 右：复刻</p>
       </div>
       <div class="shot">
         <div class="pair">
@@ -489,7 +490,7 @@
           <img src="media/shots/a16016f8c53d4503be3a9accac2e61ac.jpg" alt="操作展示画面" loading="lazy">
         </div>
         <p>操作展示</p>
-        <p class="who">上：参考 · 下：复刻</p>
+        <p class="who">左：参考 · 右：复刻</p>
       </div>
       <div class="shot">
         <div class="pair">
@@ -497,7 +498,7 @@
           <img src="media/shots/09967191fc1841789b8b2349082f64d8.jpg" alt="操作展示画面" loading="lazy">
         </div>
         <p>操作展示</p>
-        <p class="who">上：参考 · 下：复刻</p>
+        <p class="who">左：参考 · 右：复刻</p>
       </div>
     </div>
   </div>
@@ -570,7 +571,7 @@
           <img src="media/shots/546942db278244f49864238d52a5938e.jpg" alt="手持展示画面" loading="lazy">
         </div>
         <p>手持展示</p>
-        <p class="who">上：参考 · 下：复刻</p>
+        <p class="who">左：参考 · 右：复刻</p>
       </div>
       <div class="shot">
         <div class="pair">
@@ -578,7 +579,7 @@
           <img src="media/shots/a979fae8d58647959f0a3314d3f17ff1.jpg" alt="容积展示画面" loading="lazy">
         </div>
         <p>容积展示</p>
-        <p class="who">上：参考 · 下：复刻</p>
+        <p class="who">左：参考 · 右：复刻</p>
       </div>
       <div class="shot">
         <div class="pair">
@@ -586,7 +587,7 @@
           <img src="media/shots/4d22a386b5144686aab7eae0a66f88c7.jpg" alt="放置展示画面" loading="lazy">
         </div>
         <p>放置展示</p>
-        <p class="who">上：参考 · 下：复刻</p>
+        <p class="who">左：参考 · 右：复刻</p>
       </div>
       <div class="shot">
         <div class="pair">
@@ -594,7 +595,7 @@
           <img src="media/shots/a01f1ee5bb6743e3a86ace25b298ae29.jpg" alt="商品交互画面" loading="lazy">
         </div>
         <p>商品交互</p>
-        <p class="who">上：参考 · 下：复刻</p>
+        <p class="who">左：参考 · 右：复刻</p>
       </div>
     </div>
   </div>
@@ -636,7 +637,7 @@
           <img src="media/shots/4e14032467004fd6b2463e50c31d0539.jpg" alt="佩戴展示画面" loading="lazy">
         </div>
         <p>佩戴展示</p>
-        <p class="who">上：参考 · 下：复刻</p>
+        <p class="who">左：参考 · 右：复刻</p>
       </div>
       <div class="shot">
         <div class="pair">
@@ -644,7 +645,7 @@
           <img src="media/shots/6db8088b6da643c292b1dc5c54fe3ebd.jpg" alt="细节展示画面" loading="lazy">
         </div>
         <p>细节展示</p>
-        <p class="who">上：参考 · 下：复刻</p>
+        <p class="who">左：参考 · 右：复刻</p>
       </div>
       <div class="shot">
         <div class="pair">
@@ -695,7 +696,7 @@
           <img src="media/shots/b33cf911634648a99d35f90a54779e21.jpg" alt="切面展示画面" loading="lazy">
         </div>
         <p>切面展示</p>
-        <p class="who">上：参考 · 下：复刻</p>
+        <p class="who">左：参考 · 右：复刻</p>
       </div>
       <div class="shot">
         <div class="pair">
@@ -703,7 +704,7 @@
           <img src="media/shots/f2a0ced3dfda4a10ac1646cb12df3c94.jpg" alt="制作过程画面" loading="lazy">
         </div>
         <p>制作过程</p>
-        <p class="who">上：参考 · 下：复刻</p>
+        <p class="who">左：参考 · 右：复刻</p>
       </div>
       <div class="shot">
         <div class="pair">
@@ -711,7 +712,7 @@
           <img src="media/shots/d627b74d6a1d47ada9b32bd6d5fdedf2.jpg" alt="食欲营销画面" loading="lazy">
         </div>
         <p>食欲营销</p>
-        <p class="who">上：参考 · 下：复刻</p>
+        <p class="who">左：参考 · 右：复刻</p>
       </div>
       <div class="shot">
         <div class="pair">
@@ -719,7 +720,7 @@
           <img src="media/shots/f28fa300fd6249a698bd7ae297e83780.jpg" alt="食材展示画面" loading="lazy">
         </div>
         <p>食材展示</p>
-        <p class="who">上：参考 · 下：复刻</p>
+        <p class="who">左：参考 · 右：复刻</p>
       </div>
     </div>
   </div>
@@ -752,7 +753,7 @@
           <img src="media/shots/ce4b682610c3406cbb15488c98c85d3d.jpg" alt="佩戴动作画面" loading="lazy">
         </div>
         <p>佩戴动作</p>
-        <p class="who">上：参考 · 下：复刻</p>
+        <p class="who">左：参考 · 右：复刻</p>
       </div>
       <div class="shot">
         <div class="pair">
@@ -760,7 +761,7 @@
           <img src="media/shots/00446e9f458f471ea6bdc219b2ac75c9.jpg" alt="近景展示画面" loading="lazy">
         </div>
         <p>近景展示</p>
-        <p class="who">上：参考 · 下：复刻</p>
+        <p class="who">左：参考 · 右：复刻</p>
       </div>
       <div class="shot">
         <div class="pair">
@@ -768,7 +769,7 @@
           <img src="media/shots/c35d19b8f824416989afdd91d621e5f1.jpg" alt="半身展示画面" loading="lazy">
         </div>
         <p>半身展示</p>
-        <p class="who">上：参考 · 下：复刻</p>
+        <p class="who">左：参考 · 右：复刻</p>
       </div>
     </div>
   </div>
@@ -819,7 +820,7 @@
           <img src="media/shots/bd2300504556429195b5b560490e762c.jpg" alt="冲突制造画面" loading="lazy">
         </div>
         <p>冲突制造</p>
-        <p class="who">上：参考 · 下：复刻</p>
+        <p class="who">左：参考 · 右：复刻</p>
       </div>
       <div class="shot">
         <div class="pair">
@@ -827,7 +828,7 @@
           <img src="media/shots/03a9dd78a7de47b6af614ec4a2480462.jpg" alt="剧情反转画面" loading="lazy">
         </div>
         <p>剧情反转</p>
-        <p class="who">上：参考 · 下：复刻</p>
+        <p class="who">左：参考 · 右：复刻</p>
       </div>
       <div class="shot">
         <div class="pair">
@@ -835,7 +836,7 @@
           <img src="media/shots/b6f90b631f0548d0bdb3a28f17bba283.jpg" alt="产品介绍画面" loading="lazy">
         </div>
         <p>产品介绍</p>
-        <p class="who">上：参考 · 下：复刻</p>
+        <p class="who">左：参考 · 右：复刻</p>
       </div>
     </div>
   </div>
@@ -886,7 +887,7 @@
           <img src="media/shots/897790ef9e9f44c7bcd95ed90039c1ca.jpg" alt="冲突制造画面" loading="lazy">
         </div>
         <p>冲突制造</p>
-        <p class="who">上：参考 · 下：复刻</p>
+        <p class="who">左：参考 · 右：复刻</p>
       </div>
       <div class="shot">
         <div class="pair">
@@ -894,7 +895,7 @@
           <img src="media/shots/e214c7663e904216a18d77a78faf78d6.jpg" alt="剧情反转画面" loading="lazy">
         </div>
         <p>剧情反转</p>
-        <p class="who">上：参考 · 下：复刻</p>
+        <p class="who">左：参考 · 右：复刻</p>
       </div>
       <div class="shot">
         <div class="pair">
@@ -902,7 +903,7 @@
           <img src="media/shots/2a8af91e1eb046cea37dfcfea16031d9.jpg" alt="产品介绍画面" loading="lazy">
         </div>
         <p>产品介绍</p>
-        <p class="who">上：参考 · 下：复刻</p>
+        <p class="who">左：参考 · 右：复刻</p>
       </div>
     </div>
   </div>
@@ -944,7 +945,7 @@
           <img src="media/shots/55ed7326c0bf4729909085e06943762a.jpg" alt="冲突制造画面" loading="lazy">
         </div>
         <p>冲突制造</p>
-        <p class="who">上：参考 · 下：复刻</p>
+        <p class="who">左：参考 · 右：复刻</p>
       </div>
       <div class="shot">
         <div class="pair">
@@ -952,7 +953,7 @@
           <img src="media/shots/502932a382da4a0ab95e7104513de853.jpg" alt="冲突升级画面" loading="lazy">
         </div>
         <p>冲突升级</p>
-        <p class="who">上：参考 · 下：复刻</p>
+        <p class="who">左：参考 · 右：复刻</p>
       </div>
       <div class="shot">
         <div class="pair">
@@ -960,7 +961,7 @@
           <img src="media/shots/7031ac9273c14ed4b66e25ae0c5c68a8.jpg" alt="反转入广画面" loading="lazy">
         </div>
         <p>反转入广</p>
-        <p class="who">上：参考 · 下：复刻</p>
+        <p class="who">左：参考 · 右：复刻</p>
       </div>
     </div>
   </div>
@@ -1002,7 +1003,7 @@
           <img src="media/shots/271f5f33b9964d08b55d18aa1e5c47b4.jpg" alt="冲突制造画面" loading="lazy">
         </div>
         <p>冲突制造</p>
-        <p class="who">上：参考 · 下：复刻</p>
+        <p class="who">左：参考 · 右：复刻</p>
       </div>
       <div class="shot">
         <div class="pair">
@@ -1010,7 +1011,7 @@
           <img src="media/shots/8706074696c54527b84a62d5da973f45.jpg" alt="反转入广画面" loading="lazy">
         </div>
         <p>反转入广</p>
-        <p class="who">上：参考 · 下：复刻</p>
+        <p class="who">左：参考 · 右：复刻</p>
       </div>
       <div class="shot">
         <div class="pair">
@@ -1018,7 +1019,7 @@
           <img src="media/shots/462a6ebb58d44dbe8eb22c36885b27a7.jpg" alt="广告收口画面" loading="lazy">
         </div>
         <p>广告收口</p>
-        <p class="who">上：参考 · 下：复刻</p>
+        <p class="who">左：参考 · 右：复刻</p>
       </div>
     </div>
   </div>
@@ -1060,7 +1061,7 @@
           <img src="media/shots/ad338c9ea2514db4b7853557b8136d79.jpg" alt="反差悬念画面" loading="lazy">
         </div>
         <p>反差悬念</p>
-        <p class="who">上：参考 · 下：复刻</p>
+        <p class="who">左：参考 · 右：复刻</p>
       </div>
       <div class="shot">
         <div class="pair">
@@ -1068,7 +1069,7 @@
           <img src="media/shots/466357232ac34dc4afb61f7de100eb98.jpg" alt="冲突制造画面" loading="lazy">
         </div>
         <p>冲突制造</p>
-        <p class="who">上：参考 · 下：复刻</p>
+        <p class="who">左：参考 · 右：复刻</p>
       </div>
       <div class="shot">
         <div class="pair">
@@ -1076,7 +1077,7 @@
           <img src="media/shots/f47b8a27ad144dc0b665c5899d10a215.jpg" alt="反转入广画面" loading="lazy">
         </div>
         <p>反转入广</p>
-        <p class="who">上：参考 · 下：复刻</p>
+        <p class="who">左：参考 · 右：复刻</p>
       </div>
     </div>
   </div>
@@ -1277,7 +1278,7 @@
           <img src="media/shots/3350247da8ef4e878a751aa5f2c3ae33.jpg" alt="痛点引入画面" loading="lazy">
         </div>
         <p>痛点引入</p>
-        <p class="who">上：参考 · 下：复刻</p>
+        <p class="who">左：参考 · 右：复刻</p>
       </div>
       <div class="shot">
         <div class="pair">
@@ -1285,7 +1286,7 @@
           <img src="media/shots/92d12ea5fc88443fad1976b61fcacb0b.jpg" alt="剧情反转画面" loading="lazy">
         </div>
         <p>剧情反转</p>
-        <p class="who">上：参考 · 下：复刻</p>
+        <p class="who">左：参考 · 右：复刻</p>
       </div>
       <div class="shot">
         <div class="pair">
@@ -1293,7 +1294,7 @@
           <img src="media/shots/b743d54f09bb4c5e88785498d2f6621f.jpg" alt="产品演示画面" loading="lazy">
         </div>
         <p>产品演示</p>
-        <p class="who">上：参考 · 下：复刻</p>
+        <p class="who">左：参考 · 右：复刻</p>
       </div>
       <div class="shot">
         <div class="pair">
@@ -1301,7 +1302,7 @@
           <img src="media/shots/17998ede202a4a598f4c24772fbeeb66.jpg" alt="互动暗示画面" loading="lazy">
         </div>
         <p>互动暗示</p>
-        <p class="who">上：参考 · 下：复刻</p>
+        <p class="who">左：参考 · 右：复刻</p>
       </div>
     </div>
   </div>
@@ -1334,7 +1335,7 @@
           <img src="media/shots/117f785f0f0945eaad7d31ab6ba04a77.jpg" alt="痛点引入画面" loading="lazy">
         </div>
         <p>痛点引入</p>
-        <p class="who">上：参考 · 下：复刻</p>
+        <p class="who">左：参考 · 右：复刻</p>
       </div>
       <div class="shot">
         <div class="pair">
@@ -1342,7 +1343,7 @@
           <img src="media/shots/52748b65e6d64860acd2a5d8065fd159.jpg" alt="产品引入画面" loading="lazy">
         </div>
         <p>产品引入</p>
-        <p class="who">上：参考 · 下：复刻</p>
+        <p class="who">左：参考 · 右：复刻</p>
       </div>
       <div class="shot">
         <div class="pair">
@@ -1350,7 +1351,7 @@
           <img src="media/shots/32c46b413dd042c7a1234ef8338ebec8.jpg" alt="效果展示画面" loading="lazy">
         </div>
         <p>效果展示</p>
-        <p class="who">上：参考 · 下：复刻</p>
+        <p class="who">左：参考 · 右：复刻</p>
       </div>
       <div class="shot">
         <div class="pair">
@@ -1358,7 +1359,7 @@
           <img src="media/shots/2d27f79381e54c018ecc834af1bb5694.jpg" alt="行动号召画面" loading="lazy">
         </div>
         <p>行动号召</p>
-        <p class="who">上：参考 · 下：复刻</p>
+        <p class="who">左：参考 · 右：复刻</p>
       </div>
     </div>
   </div>
@@ -1391,7 +1392,7 @@
           <img src="media/shots/ba3434244b0e460c86dab17d2c3e4215.jpg" alt="痛点引入画面" loading="lazy">
         </div>
         <p>痛点引入</p>
-        <p class="who">上：参考 · 下：复刻</p>
+        <p class="who">左：参考 · 右：复刻</p>
       </div>
       <div class="shot">
         <div class="pair">
@@ -1399,7 +1400,7 @@
           <img src="media/shots/c4d50892ff8b4ab4ab5deb413b9d4083.jpg" alt="产品引入画面" loading="lazy">
         </div>
         <p>产品引入</p>
-        <p class="who">上：参考 · 下：复刻</p>
+        <p class="who">左：参考 · 右：复刻</p>
       </div>
       <div class="shot">
         <div class="pair">
@@ -1407,7 +1408,7 @@
           <img src="media/shots/47eb916acee3488f806e2d9fa8ae7c80.jpg" alt="效果展示画面" loading="lazy">
         </div>
         <p>效果展示</p>
-        <p class="who">上：参考 · 下：复刻</p>
+        <p class="who">左：参考 · 右：复刻</p>
       </div>
       <div class="shot">
         <div class="pair">
@@ -1415,7 +1416,7 @@
           <img src="media/shots/1ab8b5c531e74dffb07fbcb3a0f5127a.jpg" alt="行动号召画面" loading="lazy">
         </div>
         <p>行动号召</p>
-        <p class="who">上：参考 · 下：复刻</p>
+        <p class="who">左：参考 · 右：复刻</p>
       </div>
     </div>
   </div>
@@ -1448,7 +1449,7 @@
           <img src="media/shots/48dea18f12f64e28b7a80f3982fdde5d.jpg" alt="痛点引入画面" loading="lazy">
         </div>
         <p>痛点引入</p>
-        <p class="who">上：参考 · 下：复刻</p>
+        <p class="who">左：参考 · 右：复刻</p>
       </div>
       <div class="shot">
         <div class="pair">
@@ -1456,7 +1457,7 @@
           <img src="media/shots/0bc07a6eb21942b18fc9f6564b41a9ba.jpg" alt="效果证明画面" loading="lazy">
         </div>
         <p>效果证明</p>
-        <p class="who">上：参考 · 下：复刻</p>
+        <p class="who">左：参考 · 右：复刻</p>
       </div>
       <div class="shot">
         <div class="pair">
@@ -1464,7 +1465,7 @@
           <img src="media/shots/d2b02b3cab0c4651ab3e5a99c2790582.jpg" alt="难度升级画面" loading="lazy">
         </div>
         <p>难度升级</p>
-        <p class="who">上：参考 · 下：复刻</p>
+        <p class="who">左：参考 · 右：复刻</p>
       </div>
     </div>
   </div>
